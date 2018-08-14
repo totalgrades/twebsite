@@ -39,11 +39,9 @@
 										        <label for="inputName" class="col-sm-3 control-label">Prefered Domain Name <span class="text-danger small">*</span></label>
 										        <div class="col-md-8">
 										            <div class="form-group row">
-										                <label for="inputKey" class="col-md-2 control-label">https://&nbsp;</label>
+										                <label for="inputKey" class="col-md-2 control-label">https://</label>
 										                <div class="col-md-6">
 										                    <input type="text" class="form-control" id="inputKey" placeholder="eg: portal">
-										                    
-
 										                </div>
 										                <label for="inputValue" class="col-md-1 control-label">.totalgrades.com</label>
 										                
