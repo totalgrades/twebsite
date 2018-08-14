@@ -117,7 +117,7 @@
 
                         <!-- main-container start -->
             <!-- ================ -->
-            <section class="main-container parallax dark-translucent-bg parallax-bg-3" style="margin: 0 12% 0 12%;">
+            <section class="main-container parallax dark-translucent-bg parallax-bg-3">
 
                 <!-- main start -->
                 <!-- ================ -->
@@ -125,14 +125,10 @@
                     <div class="container">
                         <div class="call-to-action">
                             <div class="row">
-                                <div class="col-md-8">
-                                    <h1 class="title text-center">Total Grades is free no matter how many students you have.</h1>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="text-center">
-                                        <a href="{{url('/contact')}}" class="btn btn-default btn-lg">Register Now</a>
-                                    </div>
-                                </div>
+                                
+                                    <h1 class="title text-center">Total Grades is free no matter how many students or schools you have.</h1>
+                                    <a href="{{url('/contact')}}" class="btn btn-default btn-lg" class="text-center">Register Now</a>
+                                
                             </div>
                         </div>
                     </div>
@@ -145,11 +141,11 @@
             <!-- section start -->
             <!-- ================ -->
             <div class="section clearfix object-non-visible" data-animation-effect="fadeInUpSmall" data-effect-delay="200">
-                <div class="container">
+                <div class="container text-center">
                     <h1 class="text-center">Why Choose Total Grades</h1>
                     <div class="separator"></div>
-                    <p class="lead text-center">Because Total Grades is an innovative free grades reporting solution developed by people with passion for improving the quality of primary and secondary eduction around the world.</p>
-                    <p class="space-top">Total Grades is an easy to use online platform for managing and presenting students’ grades and attendance records elegantly. Total Grades was designed with students and their parents in mind to provide a platform that encourages and empowers students to improve their grades while allowing parents to be actively enganged in helping shape their performances based on realtime statistics and feedback from teachers.</p>
+                    <p class="lead text-center">Because Total Grades is an innovative free grades reporting solution developed by people with passion for improving the quality of primary and secondary eduction around the world. Total Grades is an easy to use online platform for managing and presenting students’ grades and attendance records elegantly. Total Grades was designed with students and their parents in mind to provide a platform that encourages and empowers students to improve their grades while allowing parents to be actively enganged in helping shape their performances based on realtime statistics and feedback from teachers.</p>
+                   
                     <a href="{{url('/contact')}}" class="btn btn-lg btn-default">Register Now</a>
                     <br>
                     <div class="row">

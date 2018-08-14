@@ -6,7 +6,7 @@
 <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>Nahorr | Home</title>
+        <title>Totalgrades | Home</title>
         <meta name="description" content="Nahorr Analytics - a software and data analytics company">
         <meta name="author" content="nahorr.com">
 
@@ -14,7 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="{{asset('idea/images/favicon.ico')}}">
+        <link rel="shortcut icon" href="{{asset('favicon.png')}}">
 
         <!-- Web Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
