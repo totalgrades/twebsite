@@ -104,7 +104,7 @@
                                                     </li>
                                                     
                                                     <li class="">
-                                                        <a href="{{url('/school_registration')}}">Register</a>
+                                                        <a href="{{url('schoolRegistrationForm')}}">Register</a>
                                                     </li>
                                                     <li class="">
                                                         <a href="https://demo.totalgrades.com" target="_blank">Online Demo </a>

@@ -40,6 +40,13 @@ class HomePublicController extends Controller
     	return view('videos');
     }
 
+    public function schoolRegistrationForm()
+    {
+               
+        return view('schoolRegistrationForm');
+    }
+
+
     public function careers()
     {
         $jobs = Job::latest()->get();

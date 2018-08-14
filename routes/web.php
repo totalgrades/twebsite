@@ -14,8 +14,9 @@
 
 //Home public - pages accessible to the public
 Route::get('/', 'HomePublicController@index');
-Route::get('/features', 'HomePublicController@features');
-Route::get('/videos', 'HomePublicController@videos');
+Route::get('features', 'HomePublicController@features');
+Route::get('videos', 'HomePublicController@videos');
+Route::get('schoolRegistrationForm', 'HomePublicController@schoolRegistrationForm');
 
 Route::get('/careers', 'HomePublicController@careers');
 Route::get('/careers/jobdetails/{job}', 'HomePublicController@jobDetails');

@@ -18,7 +18,7 @@ class ComposerServiceProvider extends ServiceProvider
             [
                 'welcome',
                 'features',
-                'careers',
+                'schoolRegistrationForm',
                 'contact',
                 'videos',
                 'includes/header'
