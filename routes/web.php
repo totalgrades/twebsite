@@ -17,6 +17,7 @@ Route::get('/', 'HomePublicController@index');
 Route::get('features', 'HomePublicController@features');
 Route::get('videos', 'HomePublicController@videos');
 Route::get('schoolRegistrationForm', 'HomePublicController@schoolRegistrationForm');
+Route::post('postSchoolRegistrationForm', 'HomePublicController@postSchoolRegistrationForm');
 
 Route::get('/careers', 'HomePublicController@careers');
 Route::get('/careers/jobdetails/{job}', 'HomePublicController@jobDetails');

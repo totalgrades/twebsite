@@ -15,7 +15,7 @@
 						<!-- main start -->
 						<!-- ================ -->
 						<div class="main object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="300">
-							<div class="form-block center-block">
+							<div class="form-block center-block" style="width: 50%;">
 								<h2 class="title">Contact Us</h2>
 								<hr>
 								<form class="form-horizontal" role="form" action="{{url('/postcontactform/')}}" method="POST">

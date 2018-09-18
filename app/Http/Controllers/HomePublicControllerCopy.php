@@ -19,9 +19,6 @@ use App\Notifications\ContactFormSubmitted;
 use App\User;
 use App\ContactUs;
 use App\RegistrationSchool;
-use Validator; 
-use Illuminate\Support\Facades\Input;
-use Response;
 
 class HomePublicController extends Controller
 {
@@ -189,12 +186,12 @@ class HomePublicController extends Controller
        
        $r['captcha'] = $this->captchaCheck();
       
-        $this->validate($r, [
-        'school_name' => 'required|unique:registration_schools',
-        'preferedDomainName' => 'required|unique:registration_schools',
+        $validator = $this->validate($r, [
+        'school_name' => 'required',
+        'preferedDomainName' => 'required',
         'full_name' => 'required',
         'phone' => 'required',
-        'email' => 'required|email|unique:registration_schools',
+        'email' => 'required|email',
         'school_address' => 'required',
         'city' => 'required',
         'state' => 'required',
@@ -210,33 +207,45 @@ class HomePublicController extends Controller
          'captcha.min' => 'Wrong captcha, please try again.'
         ]);
 
-                
-           $school_registration = RegistrationSchool::insert([
-              'school_name'=>$r->school_name,
-              'preferedDomainName'=>$r->preferedDomainName,
-              'full_name'=>$r->full_name,
-              'phone'=>$r->phone,
-              'email'=>$r->email,
-              'school_address'=>$r->school_address,
-              'city'=>$r->city,
-              'state'=>$r->state,
-              'about_school'=>$r->about_school,
-              'must_agree'=>$r->must_agree,
-              'created_at' => date('Y-m-d H:i:s'),
-              'updated_at' => date('Y-m-d H:i:s'),
+        if ($validator->fails())
+           {       
+               $messages = $validator->messages()->first();            
+               //return Redirect::to('signup')->with('error_message', $messages);
+               $data['success'] = false;    
+               $data['message'] = $messages;
+           }
+           else
+           {           
+               $school_registration = RegistrationSchool::insert([
+                  'school_name'=>$r->school_name,
+                  'preferedDomainName'=>$r->preferedDomainName,
+                  'full_name'=>$r->full_name,
+                  'phone'=>$r->phone,
+                  'email'=>$r->email,
+                  'school_address'=>$r->school_address,
+                  'city'=>$r->city,
+                  'state'=>$r->state,
+                  'about_school'=>$r->about_school,
+                  'must_agree'=>$r->must_agree,
+                  'created_at' => date('Y-m-d H:i:s'),
+                  'updated_at' => date('Y-m-d H:i:s'),
 
-               
-          ]);
+                   
+              ]);
+           }
+
            
-
-        //$user = User::first();
+        
  
-        //$user->notify(new RegistrationSchoolSubmitted("A new school has submitted registration to use totalgrades."));
+      
+        $user = User::first();
+ 
+        $user->notify(new RegistrationSchoolSubmitted("A new school has submitted registration to use totalgrades."));
 
                
         flash('Your registration was Submitted successfully. We will be contacting you soon!')->success();
       
-       return back();  
+       return Response::json($data);  
     }
 
 }
