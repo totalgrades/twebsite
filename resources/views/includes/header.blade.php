@@ -113,12 +113,12 @@
                                                     <li class="dropdown">
                                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources</a>
                                                         <ul class="dropdown-menu">
-                                                            <li><a href="{{url('/videos')}}">Video Tutorials </a></li>
-                                                            <li><a href="{{url('/videos')}}">Documentation</a></li>
+                                                            <li><a href="{{url('videos')}}">Video Tutorials </a></li>
+                                                            <li><a href="{{url('documentattion')}}">Documentation</a></li>
                                                         </ul>
                                                     </li>
                                                     <li class="">
-                                                        <a href="{{url('/contact')}}">Contact Us</a>
+                                                        <a href="{{url('contact')}}">Contact Us</a>
                                                     </li>
                                                     
                                                 </ul>

@@ -3,6 +3,9 @@
 @section('content')
 
             @include('includes.header')
+            <style type="text/css">
+            	.showDiv{ display: none };
+            </style>
 
             <!-- main-container start -->
 			<!-- ================ -->
@@ -114,20 +117,23 @@
 										<div class="form-group">
 											<div class="col-sm-offset-3 col-sm-8">
 												<div class="well" style="background-color: #b7c3d8;">
-													Please review our policy below. You must agree to continue.
+													<button type="button" class="btn btn-primary" id="reviewPolicy" style="white-space: normal;">Please review our policy below. You must agree to continue.</button>
 													<hr>
-													<p>Totalgrades is a free software developed by Nnamdi Okeke. This software is distributed under the MIT lincence</p>
 
-						                            <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-													
+													<div id="totalgradesPolicy" style="display: none;">
+															<p>Totalgrades is a free software developed by Nahorr Analytics. This software is distributed under the MIT lincence</p>
 
-						                            
-												<div class="checkbox checkbox-success" id="hideShowCheckbox">
-													<label>
-														<input type="checkbox" name="must_agree" value="0"><input type="checkbox" name="must_agree" value="1" />
-														<a><strong>Yes, I agree.</strong></a>
-													</label>
-												</div>
+								                            <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+															
+
+								                            
+														<div class="checkbox checkbox-success" id="hideShowCheckbox">
+															<label>
+																<input type="checkbox" name="must_agree" value="0"><input type="checkbox" name="must_agree" value="1" />
+																<a><strong>Yes, I agree.</strong></a>
+															</label>
+														</div>
+													</div>
 											    </div>
 											</div>
 										</div>
@@ -156,6 +162,11 @@
 
 											 	$( "#spanText" ).text(portalDomain);
 
+											});
+
+											$("#reviewPolicy").click(function(){
+
+												$("#totalgradesPolicy").show(600);
 											});
 
 										});

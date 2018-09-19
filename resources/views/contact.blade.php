@@ -15,7 +15,7 @@
 						<!-- main start -->
 						<!-- ================ -->
 						<div class="main object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="300">
-							<div class="form-block center-block" style="width: 50%;">
+							<div class="form-block center-block" style="width: 80%;">
 								<h2 class="title">Contact Us</h2>
 								<hr>
 								<form class="form-horizontal" role="form" action="{{url('/postcontactform/')}}" method="POST">
@@ -60,10 +60,10 @@
 									</div>
 
 									<div class="form-group">
-											<div class="col-sm-offset-3 col-sm-8">
-												<div class="g-recaptcha" data-sitekey="{{env('RE_CAPTCHA_SITEKEY')}}"></div>
-											</div>
+										<div class="col-sm-offset-3 col-sm-8">
+											<div class="g-recaptcha" data-sitekey="{{env('RE_CAPTCHA_SITEKEY')}}" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
 										</div>
+									</div>
 
 									
 									<div class="form-group">

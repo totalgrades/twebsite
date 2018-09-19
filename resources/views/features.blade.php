@@ -84,7 +84,7 @@
 								</div>
 								<div class="col-md-6">
 									<div class="space hidden-lg hidden-md"></div>
-									<iframe class="animated fadeInUpSmall" width="560" height="400" src="https://www.youtube.com/embed/Bzn9dMX7ISs" frameborder="100" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+									<iframe class="animated fadeInUpSmall" width="100%" height="400" src="https://www.youtube.com/embed/Bzn9dMX7ISs" frameborder="100" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 								</div>
 							</div>
 							<div class="space"></div>
@@ -146,6 +146,6 @@
 
       
 
-        @include('includes.subfooter')
+        @include('includes.footer')
 @endsection
 

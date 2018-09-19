@@ -53,7 +53,7 @@
                                     data-speed="600"
                                     data-start="0"
                                     data-end="10000"
-                                    data-endspeed="600"><a href=" {{ url('/school_registration') }} " class="btn btn-primary btn-lg">Register Now <i class="fa fa-edit pl-10"></i></a>
+                                    data-endspeed="600"><a href=" {{ url('/schoolRegistrationForm') }} " class="btn btn-primary btn-lg">Register Now <i class="fa fa-edit pl-10"></i></a>
                                 </div>
 
                                 </li>
