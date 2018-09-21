@@ -57,7 +57,7 @@
 											</div>
 										</div>
 										<div class="form-group">
-									        <label for="inputName" class="col-sm-3 control-label">Prefered Domain Name <span class="text-danger small">*</span></label>
+									        <label for="inputName" class="col-sm-3 control-label">Prefered Portal Name <span class="text-danger small">*</span></label>
 									        <div class="col-md-8">
 									            <div class="form-group row">
 									                <label for="inputKey" class="col-md-3 control-label">https://www.</label>
@@ -68,6 +68,7 @@
 									                
 									            </div>
 									            <p class="h6" id="portalDomainUrl">Your portal url will be <span class="text-info bg-secondary">https://www.<span class="text-info bg-link" id="spanText" style="font-size: 20px; color: darkred;">portal</span>.totalgrades.com</span></p>
+									            <p><span id="status" style="display: none"><img src="{{asset('idea/images/loader.gif')}}"> <span>Checking...</span></span></p>
 									            <p><span id="error_preferedDomainName"></span></p>
 									        </div>
 									       
@@ -168,7 +169,7 @@
 											 	var portalDomain = $(this).val();
 
 											 	$( "#spanText" ).text(portalDomain);
-
+											 	$("#status").show();
 											});
 
 											$("#reviewPolicy").click(function(){
@@ -183,6 +184,7 @@
 											 var preferedDomainName = $('#preferedDomainName').val();
 											 var _token = $('input[name="_token"]').val();
 											 var filter = /^([a-zA-Z0-9])+$/;
+											 $("#status").hide();
 											 if(!filter.test(preferedDomainName))
 											 {    
 											  $('#error_preferedDomainName').html('<label class="text-danger">Invalid portal Name</label>');
@@ -199,17 +201,19 @@
 											   data:{preferedDomainName:preferedDomainName, _token:_token},
 											   success:function(result)
 											   {
-											    if(result == 'unique')
-											    {
-											     $('#error_preferedDomainName').html('<label class="text-success">Portal Name is Available</label>');
-											     $('#preferedDomainName').removeClass('has-error');
-											     $('#register').attr('disabled', false);
-											    }
-											    else
+
+											    if(result != 'unique')
 											    {
 											     $('#error_preferedDomainName').html('<label class="text-danger">portal Domain not Available</label>');
 											     $('#preferedDomainName').addClass('has-error');
 											     $('#register').attr('disabled', 'disabled');
+											     
+											    }
+											    else
+											    {
+											     $('#error_preferedDomainName').html('<label class="text-success">Portal Name is Available</label>');
+											     $('#preferedDomainName').removeClass('has-error');
+											     $('#register').attr('disabled', false);
 											    }
 											   }
 											  })
