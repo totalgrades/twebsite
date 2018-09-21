@@ -7,6 +7,7 @@
     <head>
         <meta charset="utf-8">
         <title>Totalgrades | Home</title>
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <meta name="description" content="Nahorr Analytics - a software and data analytics company">
         <meta name="author" content="nahorr.com">
 

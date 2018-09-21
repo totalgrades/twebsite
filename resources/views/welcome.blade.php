@@ -127,7 +127,7 @@
                             <div class="row">
                                 
                                     <h1 class="title text-center bg-info">Total Grades is free no matter how many students or schools you have.</h1>
-                                    <a href="{{url('/contact')}}" class="btn btn-default btn-lg" class="text-center">Register Now</a>
+                                    <a href="{{url('schoolRegistrationForm')}}" class="btn btn-default btn-lg" class="text-center">Register Now</a>
                                 
                             </div>
                         </div>

@@ -22,6 +22,7 @@ use App\RegistrationSchool;
 use Validator; 
 use Illuminate\Support\Facades\Input;
 use Response;
+use DB;
 
 class HomePublicController extends Controller
 {
@@ -184,8 +185,27 @@ class HomePublicController extends Controller
         return view('schoolRegistrationForm');
     }
 
-     public function postSchoolRegistrationForm(Request $r)
+    public function checkDomainAvailability(Request $request)
     {
+       if($request->get('preferedDomainName'))
+       {
+        $preferedDomainName = $request->get('preferedDomainName');
+        $data = DB::table("registration_schools")
+         ->where('preferedDomainName', $preferedDomainName)
+         ->count();
+        if($data > 0)
+        {
+         echo 'not_unique';
+        }
+        else
+        {
+         echo 'unique';
+        }
+       }
+    }
+
+     public function postSchoolRegistrationForm(Request $r)
+    {      
        
        $r['captcha'] = $this->captchaCheck();
       

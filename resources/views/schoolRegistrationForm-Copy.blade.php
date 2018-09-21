@@ -3,15 +3,14 @@
 @section('content')
 
             @include('includes.header')
-
             <style type="text/css">
-			   
 			   .has-error
 			   {
 			    border-color:#cc0000;
 			    background-color:#ffff99;
 			   }
-			  </style>
+			 </style>
+
             <!-- main-container start -->
 			<!-- ================ -->
 			<section class="main-container light-translucent-bg">
@@ -68,9 +67,8 @@
 									                
 									            </div>
 									            <p class="h6" id="portalDomainUrl">Your portal url will be <span class="text-info bg-secondary">https://www.<span class="text-info bg-link" id="spanText" style="font-size: 20px; color: darkred;">portal</span>.totalgrades.com</span></p>
-									            <p><span id="error_preferedDomainName"></span></p>
 									        </div>
-									       
+									        <span id="error_email"></span>
 									    </div>
 										<div class="form-group has-feedback">
 											<label for="inputLastName" class="col-sm-3 control-label">Your Full Name <span class="text-danger small">*</span></label>
@@ -154,7 +152,7 @@
 
 										<div class="form-group">
 											<div class="col-sm-offset-3 col-sm-8">
-												<button type="submit" class="btn btn-default" id="register"><strong>Submit Registration</strong></button>
+												<button type="submit" class="btn btn-default"><strong>Submit Registration</strong></button>
 											</div>
 										</div>
 									</form>
@@ -175,49 +173,6 @@
 
 												$("#totalgradesPolicy").show(600);
 											});
-
-											$('#preferedDomainName').blur(function(){
-
-											
-											 var error_preferedDomainName = '';
-											 var preferedDomainName = $('#preferedDomainName').val();
-											 var _token = $('input[name="_token"]').val();
-											 var filter = /^([a-zA-Z0-9])+$/;
-											 if(!filter.test(preferedDomainName))
-											 {    
-											  $('#error_preferedDomainName').html('<label class="text-danger">Invalid portal Name</label>');
-											  $('#preferedDomainName').addClass('has-error');
-											  $('#register').attr('disabled', 'disabled');
-
-											 }
-											 else
-											 {
-
-											  $.ajax({
-											   url:"{{ route('check_domain_availability') }}",
-											   method:"POST",
-											   data:{preferedDomainName:preferedDomainName, _token:_token},
-											   success:function(result)
-											   {
-											    if(result == 'unique')
-											    {
-											     $('#error_preferedDomainName').html('<label class="text-success">Portal Name is Available</label>');
-											     $('#preferedDomainName').removeClass('has-error');
-											     $('#register').attr('disabled', false);
-											    }
-											    else
-											    {
-											     $('#error_preferedDomainName').html('<label class="text-danger">portal Domain not Available</label>');
-											     $('#preferedDomainName').addClass('has-error');
-											     $('#register').attr('disabled', 'disabled');
-											    }
-											   }
-											  })
-											 }
-											});
-
-											
-											
 
 										});
 
