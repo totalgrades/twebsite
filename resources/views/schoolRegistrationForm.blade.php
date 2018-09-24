@@ -164,10 +164,7 @@
 
 									<script type="text/javascript">
 										jQuery(document).ready(function($){
-
-											
-
-											
+			
 
 											$('#preferedDomainName').keyup(function(){
 
@@ -186,43 +183,53 @@
 											 var _token = $('input[name="_token"]').val();
 											 var filter = /^([a-zA-Z0-9])+$/;
 											 
-
-											 if(!filter.test(preferedDomainName))
-											 {    
-											  $('#error_preferedDomainName').html('<label class="text-danger"><i class="fa fa-times" aria-hidden="true"></i>Invalid Portal Name( letters and Numbers only & No spaces)</label>');
-											  $('#preferedDomainName').addClass('has-error');
-											  $('#register').attr('disabled', 'disabled');
-
-											 }
-											 else
+											 if ((portalDomain.length > 4) && (portalDomain.length) < 16) 
 											 {
 
-											  $.ajax({
-											   url:"{{ route('check_domain_availability') }}",
-											   method:"POST",
-											   data:{preferedDomainName:preferedDomainName, _token:_token},
-											   success:function(result)
-											   {
+												 if(!filter.test(preferedDomainName))
+													 {    
+													  $('#error_preferedDomainName').html('<label class="text-danger"><i class="fa fa-times" aria-hidden="true"></i>Invalid Portal Name( letters and Numbers only & No spaces)</label>');
+													  $('#preferedDomainName').addClass('has-error');
+													  $('#register').attr('disabled', 'disabled');
+													  $("#portalDomainUrl").hide(600);
+													 }
+													 else
+													 {
 
-											    if(result != 'unique')
-											    {
-											     
-											     $('#error_preferedDomainName').html('<label class="text-danger"><i class="fa fa-times" aria-hidden="true"></i>Portal name is not available</label>');
-											     $('#preferedDomainName').addClass('has-error');
-											     $('#register').attr('disabled', 'disabled');
-											     
-											    }
-											    else
-											    {
-											     $('#error_preferedDomainName').html('<label class="text-success"><i class="fa fa-check" aria-hidden="true"></i>Portal Name is Available</label>');
-											     $('#preferedDomainName').removeClass('has-error');
-											     $('#register').attr('disabled', false);
-											    }
-											   }
-											  })
-											 }
-											});
+													  $.ajax({
+													   url:"{{ route('check_domain_availability') }}",
+													   method:"POST",
+													   data:{preferedDomainName:preferedDomainName, _token:_token},
+													   success:function(result)
+													   {
 
+													    if(result == 'unique')
+													    {
+													     $('#error_preferedDomainName').html('<label class="text-success"><i class="fa fa-check" aria-hidden="true"></i>Portal Name is Available</label>');
+													     $('#preferedDomainName').removeClass('has-error');
+													     $('#register').attr('disabled', false);
+													     $("#portalDomainUrl").show(600);
+													    }
+													    else
+													    {
+													     $('#error_preferedDomainName').html('<label class="text-danger"><i class="fa fa-times" aria-hidden="true"></i>Portal name is not available</label>');
+													     $('#preferedDomainName').addClass('has-error');
+													     $('#register').attr('disabled', 'disabled');
+													     $("#portalDomainUrl").hide(600);
+													    }
+													   }
+													  })
+												 	}
+												}
+
+												$('#error_preferedDomainName').html('<label class="text-danger"><i class="fa fa-times" aria-hidden="true"></i>Portal name must be between 5 and 15 characters</label>');
+												$('#preferedDomainName').addClass('has-error');
+												$('#register').attr('disabled', 'disabled');
+												$("#portalDomainUrl").hide(600);
+
+												});
+											 
+											 
 											$("#reviewPolicy").click(function(){
 
 												$("#totalgradesPolicy").show(600);
