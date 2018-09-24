@@ -165,29 +165,31 @@
 									<script type="text/javascript">
 										jQuery(document).ready(function($){
 
-											$( "#preferedDomainName" ).keyup(function(event) {
-											 	var portalDomain = $(this).val();
-
-											 	$( "#spanText" ).text(portalDomain);
-											 	$("#status").show();
-											});
-
-											$("#reviewPolicy").click(function(){
-
-												$("#totalgradesPolicy").show(600);
-											});
-
-											$('#preferedDomainName').blur(function(){
+											
 
 											
+
+											$('#preferedDomainName').keyup(function(){
+
+											 	var portalDomain = $(this).val();
+											 	
+											 	$( "#spanText" ).text(portalDomain);
+
+											 	$("#status").show();
+											 	 setTimeout(function(){
+												   document.getElementById("status").style.display="none";
+												}, 500); 
+
+											 
 											 var error_preferedDomainName = '';
 											 var preferedDomainName = $('#preferedDomainName').val();
 											 var _token = $('input[name="_token"]').val();
 											 var filter = /^([a-zA-Z0-9])+$/;
-											 $("#status").hide();
+											 
+
 											 if(!filter.test(preferedDomainName))
 											 {    
-											  $('#error_preferedDomainName').html('<label class="text-danger">Invalid portal Name</label>');
+											  $('#error_preferedDomainName').html('<label class="text-danger"><i class="fa fa-times" aria-hidden="true"></i>Invalid Portal Name( letters and Numbers only & No spaces)</label>');
 											  $('#preferedDomainName').addClass('has-error');
 											  $('#register').attr('disabled', 'disabled');
 
@@ -204,14 +206,15 @@
 
 											    if(result != 'unique')
 											    {
-											     $('#error_preferedDomainName').html('<label class="text-danger">portal Domain not Available</label>');
+											     
+											     $('#error_preferedDomainName').html('<label class="text-danger"><i class="fa fa-times" aria-hidden="true"></i>Portal name is not available</label>');
 											     $('#preferedDomainName').addClass('has-error');
 											     $('#register').attr('disabled', 'disabled');
 											     
 											    }
 											    else
 											    {
-											     $('#error_preferedDomainName').html('<label class="text-success">Portal Name is Available</label>');
+											     $('#error_preferedDomainName').html('<label class="text-success"><i class="fa fa-check" aria-hidden="true"></i>Portal Name is Available</label>');
 											     $('#preferedDomainName').removeClass('has-error');
 											     $('#register').attr('disabled', false);
 											    }
@@ -220,7 +223,10 @@
 											 }
 											});
 
-											
+											$("#reviewPolicy").click(function(){
+
+												$("#totalgradesPolicy").show(600);
+											});
 											
 
 										});
