@@ -100,25 +100,26 @@
                                                         <a href="{{url('/')}}">Home</a>
                                                     </li>
                                                     <li class="">
-                                                        <a href="{{url('/features')}}">Core Features</a>
+                                                        <a href="{{url('/features')}}">Features</a>
                                                     </li>
                                                     
                                                     <li class="">
                                                         <a href="{{url('schoolRegistrationForm')}}">Register</a>
                                                     </li>
                                                     <li class="">
-                                                        <a href="https://demo.totalgrades.com" target="_blank">Online Demo </a>
+                                                        <a href="https://demo.totalgrades.com" target="_blank">Demo </a>
                                                     </li>
                                                 
                                                     <li class="dropdown">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources</a>
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation</a>
                                                         <ul class="dropdown-menu">
-                                                            <li><a href="{{url('videos')}}">Video Tutorials </a></li>
-                                                            <li><a href="{{url('documentattion')}}">Documentation</a></li>
+                                                            <li><a href="{{url('students')}}">For Students </a></li>
+                                                            <li><a href="{{url('teachers')}}">For Teachers</a></li>
+                                                            <li><a href="{{url('administrators')}}">For Administrators</a></li>
                                                         </ul>
                                                     </li>
                                                     <li class="">
-                                                        <a href="{{url('contact')}}">Contact Us</a>
+                                                        <a href="{{url('contact')}}">Contact</a>
                                                     </li>
                                                     
                                                 </ul>

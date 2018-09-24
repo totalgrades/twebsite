@@ -20,6 +20,9 @@ Route::get('schoolRegistrationForm', 'HomePublicController@schoolRegistrationFor
 Route::post('checkdomainavailability', 'HomePublicController@checkDomainAvailability')->name('check_domain_availability');
 Route::post('postSchoolRegistrationForm', 'HomePublicController@postSchoolRegistrationForm')->name('SchoolRegistrationForm');
 
+//Documentation Studnets
+Route::get('documentation/students', 'Documentation\StudentsController@students');
+
 Route::get('/careers', 'HomePublicController@careers');
 Route::get('/careers/jobdetails/{job}', 'HomePublicController@jobDetails');
 Route::get('/careers/jobapplicationform/{job}', 'HomePublicController@jobApplicationForm');
