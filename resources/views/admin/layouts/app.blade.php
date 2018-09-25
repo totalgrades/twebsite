@@ -11,6 +11,17 @@
 
     <!-- Bootstrap -->
     <link href="{{asset('/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- include libraries(jQuery, bootstrap) -->
+    <!--<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>-->
+    <!--<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>-->
+
+    <!-- include summernote css/js -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+    
+
+    
     <!-- Font Awesome -->
     <link href="{{asset('/gentelella/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- NProgress -->
@@ -32,6 +43,7 @@
     <link href="{{asset('/gentelella/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('/gentelella/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css')}}" rel="stylesheet">
 
+   
     <!-- Custom Theme Style -->
     <link href="{{asset('/gentelella/build/css/custom.min.css')}}" rel="stylesheet">
   </head>
@@ -47,6 +59,7 @@
     <script src="{{asset('/gentelella/vendors/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap -->
     <script src="{{asset('/gentelella/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js" defer></script>
     <!-- FastClick -->
     <script src="{{asset('/gentelella/vendors/fastclick/lib/fastclick.js')}}"></script>
     <!-- NProgress -->
@@ -100,6 +113,25 @@
 
     <!-- Custom Theme Scripts -->
     <script src="{{asset('/gentelella/build/js/custom.min.js')}}"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+
+            $('.summernote').summernote({
+                 height: 500,
+                                                   
+                 dialogsInBody: true,
+                 
+                 maximumImageFileSize: 500*1024, // 500 KB
+                 callbacks:{ 
+                   onImageUploadError: function(msg){ 
+                     alert("Your Image is way too big. pls select an image less then 500kb.");
+                   }}
+               });
+        });
+    </script>    
+                  
+    
     
   </body>
 </html>

@@ -38,6 +38,7 @@
                       <li><a href="{{ url('/admin/documentation/students') }}">Students</a></li>
                       <li><a href="{{ url('/admin/documentation/teachers') }}">Teachers</a></li>
                       <li><a href="{{ url('/admin/documentation/administrators') }}">Administrators</a></li>
+                      <li><a href="{{ url('/admin/documentation/categories') }}">Categories</a></li>
                     </ul>
                   </li>
 

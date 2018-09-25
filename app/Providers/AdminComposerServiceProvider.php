@@ -18,10 +18,12 @@ class AdminComposerServiceProvider extends ServiceProvider
             [
                 'admin/includes/top-info',
                 'admin/home',
+                'admin/documentation/categories',
                 'admin/documentation/students',
                 'admin/documentation/teachers',
                 'admin/documentation/administrators',
                 'admin/schools/registration'
+
             
             ], 
             

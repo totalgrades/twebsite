@@ -46,9 +46,12 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/home', 'Admin\HomeController@index');
 
     //Documentation
+    Route::get('/admin/documentation/categories', 'Admin\DocumentationController@categories');
     Route::get('/admin/documentation/students', 'Admin\DocumentationController@students');
+
 
     //School Registration
     Route::get('/admin/schools/registration', 'Admin\Schools\RegistrationController@registration');
+
 
 });
