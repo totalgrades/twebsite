@@ -113,7 +113,7 @@
                                                     <li class="dropdown">
                                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation</a>
                                                         <ul class="dropdown-menu">
-                                                            <li><a href="{{url('students')}}">For Students </a></li>
+                                                            <li><a href="{{url('documentation/students/showdocumentation')}}">For Students </a></li>
                                                             <li><a href="{{url('teachers')}}">For Teachers</a></li>
                                                             <li><a href="{{url('administrators')}}">For Administrators</a></li>
                                                         </ul>

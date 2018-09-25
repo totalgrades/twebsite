@@ -179,6 +179,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
+        App\Providers\AdminComposerServiceProvider::class,
     ],
 
     /*

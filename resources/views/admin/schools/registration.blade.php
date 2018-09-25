@@ -9,7 +9,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Users Table<small></small></h2>
+                    <h2>Schools Registration Table<small></small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -32,10 +32,17 @@
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>User Code</th>
-                          <th>Name</th>
+                          <th>#</th>
+                          <th>School Name</th>
+                          <th>Portal Name</th>
+                          <th>School Rep's name</th>
+                          <th>Phone</th>
                           <th>Email</th>
+                          <th>Address</th>
+                          <th>City</th>
+                          <th>State</th>
+                          <th>About school</th>
+                          <th>Read Policy</th>
                           <th>Date Created</th>
                           <th>status</th>
                           <th>Action</th>
@@ -44,19 +51,28 @@
 
 
                       <tbody>
-                        @foreach($users as $user)
+                        @foreach($school_registrations as $key => $reg)
                           <tr>
-                            <td>{{$user->id}}</td>
-                            <td>{{$user->registration_code}}</td>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
-                            <td>{{$user->created_at}}</td>
+                            <td>{{$key+1}}</td>
+                            <td>{{$reg->school_name}}</td>
+                            <td>{{$reg->preferedDomainName}}</td>
+                            <td>{{$reg->full_name}}</td>
+                            <td>{{$reg->phone}}</td>
+                            <td>{{$reg->email}}</td>
+                            <td>{{$reg->school_address}}</td>
+                            <td>{{$reg->city}}</td>
+                            <td>{{$reg->state}}</td>
+                            <td>{{$reg->about_school}}</td>
                             <td>
-                              @if($user->is_admin == 1)
-                                Admin User
+                              @if($reg->must_agree == 1)
+                                YES
                               @else
-                                User
+                                NO
                               @endif
+                            </td>
+                            <td>{{$reg->created_at->toFormattedDateString()}}</td>
+                            <td>
+                              <a class="btn btn-info" href="#" role="button">Approved</a>
                             </td>
                             <td>
                               <a class="btn btn-danger" href="#" role="button">Delete</a>
@@ -69,7 +85,8 @@
                 </div>
               </div>
 
-            </div>
+         
+        </div>
         <!-- /page content -->   
     @include('admin.includes.footer')                     
 @endsection

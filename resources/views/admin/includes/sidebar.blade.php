@@ -26,17 +26,25 @@
                 <h3>Dashboard</h3>
                 <ul class="nav side-menu">
               
-                <li {{{ (Request::is('home') ? 'class=active' : '') }}}>
-                    <a href="{{ url('/home') }}">
+                <li {{{ (Request::is('admin/home') ? 'class=active' : '') }}}>
+                    <a href="{{ url('/admin/home') }}">
                         <i class="fa fa-home"></i>
-                        Home
+                        Admin Home
                     </a>
                 </li>
 
-                <li {{{ (Request::is('private/profile') ? 'class=active' : '') }}}>
-                    <a href="{{ url('/private/profile') }}">
-                        <i class="fa fa-user"></i>
-                        User Profile
+                <li {{{ (Request::is('admin/documentation/students') ? 'class=active' : '') }}}><a><i class="fa fa-cubes"></i> Documentation<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{ url('/admin/documentation/students') }}">Students</a></li>
+                      <li><a href="{{ url('/admin/documentation/teachers') }}">Teachers</a></li>
+                      <li><a href="{{ url('/admin/documentation/administrators') }}">Administrators</a></li>
+                    </ul>
+                  </li>
+
+                <li {{{ (Request::is('admin/schools/registration') ? 'class=active' : '') }}}>
+                    <a href="{{ url('/admin/schools/registration') }}">
+                        <i class="fa fa-building-o"></i>
+                        Schools - Registration
                     </a>
                 </li>
 

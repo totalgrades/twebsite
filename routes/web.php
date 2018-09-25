@@ -21,7 +21,7 @@ Route::post('checkdomainavailability', 'HomePublicController@checkDomainAvailabi
 Route::post('postSchoolRegistrationForm', 'HomePublicController@postSchoolRegistrationForm')->name('SchoolRegistrationForm');
 
 //Documentation Studnets
-Route::get('documentation/students', 'Documentation\StudentsController@students');
+Route::get('documentation/students/showdocumentation', 'Documentation\StudentsController@studentsDocumentation');
 
 Route::get('/careers', 'HomePublicController@careers');
 Route::get('/careers/jobdetails/{job}', 'HomePublicController@jobDetails');
@@ -44,5 +44,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'admin'], function () {
     
     Route::get('/admin/home', 'Admin\HomeController@index');
+
+    //Documentation
+    Route::get('/admin/documentation/students', 'Admin\DocumentationController@students');
+
+    //School Registration
+    Route::get('/admin/schools/registration', 'Admin\Schools\RegistrationController@registration');
 
 });
