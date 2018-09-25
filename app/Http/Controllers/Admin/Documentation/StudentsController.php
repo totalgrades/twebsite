@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Documentation;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class DocumentationController extends Controller
+class StudentsController extends Controller
 {
     public function students()
     {

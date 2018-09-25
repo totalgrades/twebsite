@@ -46,8 +46,14 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/home', 'Admin\HomeController@index');
 
     //Documentation
-    Route::get('/admin/documentation/categories', 'Admin\DocumentationController@categories');
-    Route::get('/admin/documentation/students', 'Admin\DocumentationController@students');
+	    //Categories
+	    Route::get('/admin/documentation/categories', 'Admin\Documentation\CategoryController@categories');
+	    Route::post('/admin/documentation/storenewcategory', 'Admin\Documentation\CategoryController@storeNewCategory');
+	    Route::post('/admin/documentation/storeeditcategory/{category}', 'Admin\Documentation\CategoryController@storeEditCategory');
+	    Route::get('/admin/documentation/deletecategory/{category}', 'Admin\Documentation\CategoryController@deleteCategory');
+
+	    //Students
+	    Route::get('/admin/documentation/students', 'Admin\Documentation\StudentsController@students');
 
 
     //School Registration
