@@ -21,7 +21,8 @@ Route::post('checkdomainavailability', 'HomePublicController@checkDomainAvailabi
 Route::post('postSchoolRegistrationForm', 'HomePublicController@postSchoolRegistrationForm')->name('SchoolRegistrationForm');
 
 //Documentation Studnets
-Route::get('documentation/students/showdocumentation', 'Documentation\StudentsController@studentsDocumentation');
+Route::get('documentation/students/alldocumentation', 'Documentation\StudentsController@studentsDocumentation');
+Route::get('documentation/students/showdocumentation/{post}', 'Documentation\StudentsController@showDocumentation');
 
 Route::get('/careers', 'HomePublicController@careers');
 Route::get('/careers/jobdetails/{job}', 'HomePublicController@jobDetails');
@@ -52,9 +53,12 @@ Route::group(['middleware' => 'admin'], function () {
 	    Route::post('/admin/documentation/storeeditcategory/{category}', 'Admin\Documentation\CategoryController@storeEditCategory');
 	    Route::get('/admin/documentation/deletecategory/{category}', 'Admin\Documentation\CategoryController@deleteCategory');
 
-	    //Students
+	    //Documentation - Students - Teacher - Administrators
 	    Route::get('/admin/documentation/students', 'Admin\Documentation\StudentsController@students');
+	    Route::post('/admin/documentation/storenewdocpost', 'Admin\Documentation\StudentsController@storeNewDocPost');
 
+	    //Comments
+	    Route::get('/admin/documentation/categories', 'Admin\Documentation\CategoryController@categories');
 
     //School Registration
     Route::get('/admin/schools/registration', 'Admin\Schools\RegistrationController@registration');

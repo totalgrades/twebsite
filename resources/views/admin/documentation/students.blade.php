@@ -21,14 +21,32 @@
                       </div>
                       <div class="x_content">
                         <br />
-                        <form id="newDocStudentsForm" enctype="multipart/form-data" method="post" action="/admin/storenewdocumentation" data-parsley-validate class="form-horizontal form-label-left">
+                        <form id="newDocStudentsForm" enctype="multipart/form-data" method="post" action="/admin/documentation/storenewdocpost" data-parsley-validate class="form-horizontal form-label-left">
                           {{ csrf_field() }}
-                          <input type="hidden" name="category_id" value="1" >
+                          <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" >
+                          
                           <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Title/Description <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="post-title">Select Category <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                              <select class="form-control form-control-md form-control-lg rounded-0 g-mb-25" name="category_id" id="category_id">
+                                <option selected disabled>Please select one category</option>
+                                  @foreach($categories as $key => $category)
+
+                                      <option value="{{ $category->id }}" >
+                                          {{ $category->category_name }}
+                                      </option>
+
+                                  @endforeach
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="post-title">Title/Description <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input type="text" id="post_tile" name="post_title" required="required" class="form-control col-md-7 col-xs-12">
                             </div>
                           </div>
                           
@@ -39,6 +57,15 @@
                               <textarea class="summernote form-control col-md-7 col-xs-12" id="postBody" name="post_body"></textarea>
                             </div>
                           </div>
+
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Documentation/Details <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input type="hidden" name="show_profile_picture" value="0"><input type="checkbox" name="show_profile_picture" value="1" /><span style="color: darkred;">Include my profile picture with this post</span>
+                            </div>
+                          </div>
+
                          
                           <div class="ln_solid"></div>
                           <div class="form-group">
@@ -49,6 +76,17 @@
                           </div>
 
                         </form>
+                        @if (count($errors) > 0)
+                              
+                          <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                          </div>
+
+                        @endif
                       </div>
                     </div>
                   </div>
@@ -79,9 +117,8 @@
                       <thead>
                         <tr>
                           <th>ID</th>
-                          <th>User Code</th>
-                          <th>Name</th>
-                          <th>Email</th>
+                          <th>Title</th>
+                          <th>Added By</th>
                           <th>Date Created</th>
                           <th>status</th>
                           <th>Action</th>
@@ -90,22 +127,28 @@
 
 
                       <tbody>
-                        @foreach($users as $user)
+                        @foreach($posts->where($) as $key=>$post)
                           <tr>
-                            <td>{{$user->id}}</td>
-                            <td>{{$user->registration_code}}</td>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
-                            <td>{{$user->created_at}}</td>
+                            <td>{{$key+1}}</td>
+                            <td>{{$post->post_title}}</td>
+                            <td>{{$post->user->name}}</td>
+                            <td>{{$post->created_at}}</td>
                             <td>
-                              @if($user->is_admin == 1)
-                                Admin User
+                              @if($post->approved == 1)
+                                Approve
                               @else
-                                User
+                                Pending...
                               @endif
                             </td>
                             <td>
-                              <a class="btn btn-danger" href="#" role="button">Delete</a>
+                              @if($post->user->id == 1 || $post->user->id == Auth::user()->id)
+                                <a class="btn btn-danger" href="#" role="button">Edit</a>
+                                <a class="btn btn-danger" href="#" role="button">Delete</a>
+                              @else
+                                <a class="btn btn-danger" href="#" role="button" disabled>Edit</a>
+                                <a class="btn btn-danger" href="#" role="button" disabled>Delete</a>
+                              @endif
+
                             </td>
                           </tr>
                         @endforeach

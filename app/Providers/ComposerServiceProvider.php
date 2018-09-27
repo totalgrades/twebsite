@@ -21,7 +21,9 @@ class ComposerServiceProvider extends ServiceProvider
                 'schoolRegistrationForm',
                 'contact',
                 'videos',
-                'includes/header'
+                'includes/header',
+                'documentation/students/alldocumentation',
+                'documentation/students/showdocumentation'
             
             ], 
             

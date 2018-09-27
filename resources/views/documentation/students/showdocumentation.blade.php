@@ -2,25 +2,9 @@
 
 @section('content')
 
-            @include('includes.header')
+    @include('includes.header')
 
-            <!-- banner start -->
-			<!-- ================ -->
-			<!--
-			<div class="banner">
-				<div class="fixed-image section light-translucent-bg" style="background-image:url('idea/images/page-about-banner-1.jpg');">
-					<div class="container">
-					<div class="space-top"></div>
-					<h1>Core Featires</h1>
-					<div class="separator-2"></div>
-					<p class="lead">Totalgrades - A free online gradebook.</p>
-					</div>
-				</div>
-			</div>
-			-->
-			<!-- banner end -->
-
-			<!-- main-container start -->
+         <!-- main-container start -->
 			<!-- ================ -->
 			<section class="main-container">
 
@@ -29,108 +13,173 @@
 
 						<!-- main start -->
 						<!-- ================ -->
-						<div class="main col-md-12">
+						<div class="main col-md-8">
 
 							<!-- page-title start -->
 							<!-- ================ -->
-							<h1 class="page-title text-center">Documentation for Students</h1>
-							<p class="text-center">Totalgrades - free online gradebook by Nahorr Analytics.</p>
-							<div class="separator"></div>
+							<h1 class="page-title"> {{ $post->post_title }}</h1>
 							<!-- page-title end -->
-							
-							<div class="row">
-								
-								<div class="col-md-12">
-									<table class="table table-hover">
-										<thead>
-											<tr>
-												<th>#</th>
-												<th>First Name</th>
-												<th>Last Name</th>
-												<th>Username</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>1</td>
-												<td>Mark</td>
-												<td>Otto</td>
-												<td>@mdo</td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td>Jacob</td>
-												<td>Thornton</td>
-												<td>@fat</td>
-											</tr>
-											<tr>
-												<td>3</td>
-												<td colspan="2">Larry the Bird</td>
-												<td>@twitter</td>
-											</tr>
-										</tbody>
-									</table>
+
+							<!-- blogpost start -->
+							<article class="clearfix blogpost full">
+								<div class="blogpost-body">
+									<div class="side">
+										<div class="post-info">
+											<span class="day">{{$post->created_at->day}}</span>
+											<span class="month">{{substr($post->created_at->format('F'), 0,3)}} {{$post->created_at->year}}</span>
+										</div>
+										<div id="affix">
+											<span class="share">Share This</span>
+											<ul class="social-links clearfix">
+												<li class="facebook">
+													<a href="#"><i class="fa fa-facebook"></i></a>
+												</li>
+												<li class="twitter">
+													<a href="#"><i class="fa fa-twitter"></i></a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="blogpost-content">
+										<header>
+											<div class="submitted"><i class="fa fa-user pr-5"></i> by <a href="#">{{$post->user->name}}</a></div>
+										</header>
+
+										{!! $post->post_body !!}
+
+									</div>
 								</div>
+								<footer class="clearfix">
+									<ul class="links pull-left">
+										<li><i class="fa fa-comment-o pr-5"></i> <a href="#">{{$post->post_comments}} comments</a></li> 
+										<!--<li><i class="fa fa-tags pr-5"></i> <a href="#">tag 1</a>, <a href="#">tag 2</a>, <a href="#">long tag 3</a> </li>-->
+									</ul>
+								</footer>
+							</article>
+							<!-- blogpost end -->
+
+							<!-- comments start -->
+							<div class="comments">
+								<h2 class="title">There are {{$post->post_comments}} comments</h2>
+
+								<!-- comment start -->
+								<div class="comment clearfix">
+									<div class="comment-avatar">
+										<img src="images/avatar.jpg" alt="avatar">
+									</div>
+									<div class="comment-content">
+										<h3>Comment title</h3>
+										<div class="comment-meta">By <a href="#">admin</a> | Today, 12:31</div>
+										<div class="comment-body clearfix">
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
+											<a href="blog-post.html" class="btn btn-gray more pull-right"><i class="fa fa-reply"></i> Reply</a>
+										</div>
+									</div>
+									
+									<!-- comment start -->
+									<div class="comment clearfix">
+										<div class="comment-avatar">
+											<img src="images/avatar.jpg" alt="avatar">
+										</div>
+										<div class="comment-content clearfix">
+											<h3>Comment title</h3>
+											<div class="comment-meta">By <a href="#">admin</a> | Today, 12:31</div>
+											<div class="comment-body">
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
+												<a href="blog-post.html" class="btn btn-gray more pull-right"><i class="fa fa-reply"></i> Reply</a>
+											</div>
+										</div>
+									</div>
+									<!-- comment end -->
+
+								</div>
+								<!-- comment end -->
+
+								<!-- comment start -->
+								<div class="comment clearfix">
+									<div class="comment-avatar">
+										<img src="images/avatar.jpg" alt="avatar">
+									</div>
+									<div class="comment-content clearfix">
+										<h3>Comment title</h3>
+										<div class="comment-meta">By <a href="#">admin</a> | Today, 12:31</div>
+										<div class="comment-body">
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
+											<a href="blog-post.html" class="btn btn-gray more pull-right"><i class="fa fa-reply"></i> Reply</a>
+										</div>
+									</div>
+								</div>
+								<!-- comment end -->
+
 							</div>
-							<div class="space"></div>
+							<!-- comments end -->
+
+							<!-- comments form start -->
+							<div class="comments-form">
+								<h2 class="title">Add your comment</h2>
+								<form>
+									<div class="form-group has-feedback">
+										<label for="name4">Name</label>
+										<input type="text" class="form-control" id="name4" placeholder="" required>
+										<i class="fa fa-user form-control-feedback"></i>
+									</div>
+									<div class="form-group has-feedback">
+										<label for="subject4">Subject</label>
+										<input type="text" class="form-control" id="subject4" placeholder="" required>
+										<i class="fa fa-pencil form-control-feedback"></i>
+									</div>
+									<div class="form-group has-feedback">
+										<label for="message4">Message</label>
+										<textarea class="form-control" rows="8" id="message4" placeholder="" required></textarea>
+										<i class="fa fa-envelope-o form-control-feedback"></i>
+									</div>
+									<input type="submit" value="Submit" class="btn btn-default">
+								</form>
+							</div>
+							<!-- comments form end -->
 
 						</div>
 						<!-- main end -->
 
+						<!-- sidebar start -->
+						<aside class="col-md-3 col-md-offset-1">
+							<div class="sidebar">
+								<div class="block clearfix">
+									<h3 class="title">Sidebar menu</h3>
+									<div class="separator"></div>
+									<nav>
+										<ul class="nav nav-pills nav-stacked">
+											<li class="active"><a href="{{url('documentation/students/alldocumentation')}}">Students</a></li>
+											<li><a href="portfolio-3col.html">Teachers</a></li>
+											<li><a href="page-about.html">Administrators</a></li>
+										</ul>
+									</nav>
+								</div>
+								<div class="block clearfix">
+									<h3 class="title">Latest tweets</h3>
+									<div class="separator"></div>
+									<ul class="tweets">
+										<li>
+											<i class="fa fa-twitter"></i>
+											<p><a href="#">@lorem</a> ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, aliquid, et molestias nesciunt <a href="#">http://t.fd/adfasdfasd</a>.</p><span>16 hours ago</span>
+										</li>
+										<li>
+											<i class="fa fa-twitter"></i>
+											<p><a href="#">@lorem</a> ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, aliquid, et molestias nesciunt <a href="#">http://t.fd/adfasdfasd</a>.</p><span>16 hours ago</span>
+										</li>
+									</ul>
+								</div>
+							
+							</div>
+						</aside>
+						<!-- sidebar end -->
+
 					</div>
 				</div>
 			</section>
-			<!-- main-container end -->
+			<!-- main-container end --> 
 
+    @include('includes.footer')
 
-			<!-- page-top start-->
-			<!-- ================ -->
-			<div class="space"></div>
-				<div class="container">
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2">
-							<div class="call-to-action">
-								<h1 class="title">Need a live demonstration?</h1>
-								<p>We are always happy to show you how TotalGrades could help your school stand out. Plase call us or send us a messages. </p>
-								<a class="btn btn-white more" data-toggle="modal" data-target="#myModal">
-								Call Us <i class="pl-10 fa fa-phone"></i>
-								</a>
-
-								<!-- Modal -->
-								<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-												<h4 class="modal-title" id="myModalLabel">Call or Whatsapp us</h4>
-											</div>
-											<div class="modal-body">
-												<p>Phone or Whatsapp Canada:</p>
-												<ul class="list-icons">
-													<li><i class="icon-check"></i> +14034022387</li>
-												</ul>
-												<p>Phone or Whatsapp Nigeria:</p>
-												<ul class="list-icons">
-													<li><i class="icon-check"></i> +2348035525141</li>
-												</ul>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><i class="icon-check"></i> Ok</button>
-											</div>
-										</div>
-									</div>
-								</div>
-								or
-								<a href="{{url('/contact')}}" class="btn btn-default contact">Contact us <i class="pl-10 fa fa-envelope"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			<div class="space"></div>
-			<!-- page-top end -->
-
-      
-
-        @include('includes.footer')
 @endsection
 

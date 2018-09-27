@@ -7,6 +7,8 @@ use App\Repositories\UserRepository;
 
 use Carbon\Carbon;
 use App\Job;
+use App\Category;
+use App\Post;
 
 
 Class PublicViewComposer {
@@ -21,9 +23,17 @@ Class PublicViewComposer {
         //count jobs less than or equal to a weeks old          
         $new_jobs = Job::count();
 
+        $categories = Category::get();
+
+        $posts = Post::get();
+
 
         //put variables in views
-        $view->with('today', $today)->with('new_jobs', $new_jobs);
+        $view
+        ->with('today', $today)
+        ->with('new_jobs', $new_jobs)
+        ->with('categories', $categories)
+        ->with('posts', $posts);
         
     }
 }

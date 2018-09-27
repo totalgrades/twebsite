@@ -12,6 +12,7 @@ use App\User;
 use App\Job;
 use App\RegistrationSchool;
 use App\Category;
+use App\Post;
 
 
 Class PrivateAdminViewComposer {
@@ -36,6 +37,8 @@ Class PrivateAdminViewComposer {
 
         $categories = Category::get();
 
+        $posts = Post::get();
+
         //put variables in views
         $view
         ->with('today', $today)
@@ -44,7 +47,8 @@ Class PrivateAdminViewComposer {
         ->with('contactus', $contactus)
         ->with('users', $users)
         ->with('school_registrations', $school_registrations)
-        ->with('categories', $categories);
+        ->with('categories', $categories)
+        ->with('posts', $posts);
        
     }
 }
