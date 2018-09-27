@@ -47,10 +47,7 @@ class DocumentationController extends Controller
             'post_body' => 'required',
         ]);
               
-        //$post_body=$request->input('post_body');
-        //$dom = new \DomDocument();
-        //$dom->loadHtml($post_body, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        //$post_body = $dom->saveHTML();
+
         $post_edit = Post::where('id', '=', $post->id)->first();
         
         $post_edit->post_title= $request->post_title;
@@ -60,12 +57,12 @@ class DocumentationController extends Controller
         $post_edit->save();
         
         flash('Post Updated Successfully')->success();
-        return redirect()->route('viewpostpublic', [$post->id]);
+        return back();
     }
-    public function deletePost(Post $post)
+    public function deleteDocPost(Post $post)
     {
         Post::where('id', $post->id)->delete();
         flash('Post has been deleted')->error();
-        return redirect()->route('gforum');
+        return back();
     }
 }

@@ -126,8 +126,8 @@
                             </td>
                             <td>
                               @if($post->user->id == 1 || $post->user->id == Auth::user()->id)
-                                <a class="btn btn-danger" href="{{url('admin/editdocumentation/'.$post->id)}}" role="button">Edit</a>
-                                <a class="btn btn-danger" href="{{url('admin/documentation/deletedocpost/'.$post->id)}}" role="button">Delete</a>
+                                <a class="btn btn-warning" href="{{url('admin/editdocumentation/'.$post->id)}}" role="button">Edit</a>
+                                <a class="btn btn-danger" href="{{url('admin/deletedocpost/'.$post->id)}}" role="button" onclick="return confirm('Are you sure you want to delete this record?');">Delete</a>
                               @else
                                 <a class="btn btn-danger" href="#" role="button" disabled>Edit</a>
                                 <a class="btn btn-danger" href="#" role="button" disabled>Delete</a>

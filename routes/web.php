@@ -58,10 +58,7 @@ Route::group(['middleware' => 'admin'], function () {
 	    Route::post('/admin/documentation/storenewdocpost/{category}', 'Admin\DocumentationController@storeNewDocPost');
 	    Route::get('/admin/editdocumentation/{post}', 'Admin\DocumentationController@editDocPost');
 	    Route::post('/admin/updateeditdocumentation/{post}', 'Admin\DocumentationController@updateEditDocPost');
-	    Route::get('/admin/documentation/deletedocpost/{post}', 'Admin\DocumentationController@deleteDocPost');
-
-	    Route::get('/admin/documentation/students', 'Admin\Documentation\StudentsController@students');
-	    
+	    Route::get('/admin/deletedocpost/{post}', 'Admin\DocumentationController@deleteDocPost');    
 
 	    //Comments
 	    Route::get('/admin/documentation/categories', 'Admin\Documentation\CategoryController@categories');
