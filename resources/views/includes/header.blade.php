@@ -26,6 +26,15 @@
                                 <!-- header top dropdowns start -->
                                 <!-- ================ -->
                                 <div class="header-top-dropdown">
+                                    @if(Auth::check())
+                                        <div class="btn-group dropdown">
+                                            <a href="{{url('home')}}"><button type="button" class="btn-sm" > <i class="fa fa-user"></i>{{Auth::user()->name}}</button></a>
+                                        </div>
+                                    @else
+                                        <div class="btn-group dropdown">
+                                            <a href="{{route('login')}}"><button type="button" class="btn-sm" > <i class="fa fa-user"></i> Login</button></a>
+                                        </div>
+                                    @endif
                                     <div class="btn-group dropdown">
                                         <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-phone"></i> <strong>08060776024</strong></button>
                                     

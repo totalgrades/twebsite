@@ -54,8 +54,14 @@ Route::group(['middleware' => 'admin'], function () {
 	    Route::get('/admin/documentation/deletecategory/{category}', 'Admin\Documentation\CategoryController@deleteCategory');
 
 	    //Documentation - Students - Teacher - Administrators
+	    Route::get('/admin/documentation/{category}', 'Admin\DocumentationController@documentation')->name('documentation');
+	    Route::post('/admin/documentation/storenewdocpost/{category}', 'Admin\DocumentationController@storeNewDocPost');
+	    Route::get('/admin/editdocumentation/{post}', 'Admin\DocumentationController@editDocPost');
+	    Route::post('/admin/updateeditdocumentation/{post}', 'Admin\DocumentationController@updateEditDocPost');
+	    Route::get('/admin/documentation/deletedocpost/{post}', 'Admin\DocumentationController@deleteDocPost');
+
 	    Route::get('/admin/documentation/students', 'Admin\Documentation\StudentsController@students');
-	    Route::post('/admin/documentation/storenewdocpost', 'Admin\Documentation\StudentsController@storeNewDocPost');
+	    
 
 	    //Comments
 	    Route::get('/admin/documentation/categories', 'Admin\Documentation\CategoryController@categories');

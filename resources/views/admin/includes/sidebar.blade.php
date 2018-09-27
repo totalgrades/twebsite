@@ -33,14 +33,16 @@
                     </a>
                 </li>
 
-                <li {{{ (Request::is('admin/documentation/students') ? 'class=active' : '') }}}><a><i class="fa fa-cubes"></i> Documentation<span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-cubes"></i> Documentation<span class="fa fa-chevron-down"></span></a>
+                                    
                     <ul class="nav child_menu">
-                      <li><a href="{{ url('/admin/documentation/students') }}">Students</a></li>
-                      <li><a href="{{ url('/admin/documentation/teachers') }}">Teachers</a></li>
-                      <li><a href="{{ url('/admin/documentation/administrators') }}">Administrators</a></li>
-                      <li><a href="{{ url('/admin/documentation/categories') }}">Categories</a></li>
+                      @foreach($categories as $category)
+                        <li><a href="{{ url('/admin/documentation/'.$category->id) }}">{{$category->category_name}}</a></li>
+                      @endforeach
+                      <li><a href="{{ url('/admin/documentation/categories') }}">Add Category</a></li>
                     </ul>
-                  </li>
+                  
+                </li>
 
                 <li {{{ (Request::is('admin/schools/registration') ? 'class=active' : '') }}}>
                     <a href="{{ url('/admin/schools/registration') }}">
