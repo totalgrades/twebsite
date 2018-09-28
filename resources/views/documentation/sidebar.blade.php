@@ -8,15 +8,15 @@
 									<div class="separator"></div>
 									<nav>
 										<ul class="nav nav-pills nav-stacked">
-											<li {{{ (Request::is('documentation/students/alldocumentation') ? 'class=active' : '') }}}>
-												<a href="{{url('/documentation/students/alldocumentation')}}">Students</a>
-											</li>
-											<li {{{ (Request::is('documentation/teachers/alldocumentation') ? 'class=active' : '') }}}>
-												<a href="{{url('/documentation/teachers/alldocumentation')}}"">Teachers</a>
-											</li>
-											<li {{{ (Request::is('documentation/administrators/alldocumentation') ? 'class=active' : '') }}}>
-												<a href="{{url('documentation/administrators/alldocumentation')}}"">Administrators</a>
-											</li>
+
+											@foreach($categories as $category)
+
+												<li {{{ (Request::is('documentation/alldocumentation/'.$category->id) ? 'class=active' : '') }}}>
+													<a href="{{url('/documentation/alldocumentation/'.$category->id)}}">{{$category->category_name}}</a>
+												</li>
+
+											@endforeach
+											
 										</ul>
 									</nav>
 								</div>

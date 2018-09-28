@@ -33,8 +33,8 @@
 
 							<!-- page-title start -->
 							<!-- ================ -->
-							<h1 class="page-title text-center">Documentation for Students</h1>
-							<p class="text-center">Totalgrades - free online gradebook by Nahorr Analytics.</p>
+							<h1 class="page-title text-center">Documentation for {{ $category->category_name }}</h1>
+							<p class="text-center">Totalgrades is a free online gradebook by Nahorr Analytics.</p>
 							<div class="separator"></div>
 							<!-- page-title end -->
 							
@@ -47,10 +47,11 @@
 									
 
 									<ul class="list-group" id="myUL">
-										@foreach($posts as $key=>$post)
+										@foreach($posts->where('category_id', $category->id) as $key=>$post)
+
 									  		<li class="list-group-item d-flex justify-content-between align-items-center">
-									  			<a href="{{ url('documentation/students/showdocumentation/'.$post->id) }}"> {{$post->post_title}}</a>
-									  			<span class="badge badge-primary badge-pill"><i class="fa fa-comments-o" aria-hidden="true"></i>14</span>
+									  			<a href="{{ url('documentation/showdocumentation/'.$post->id) }}"> {{$post->post_title}}</a>
+									  			<span class="badge badge-primary badge-pill">{{$post->post_comments}} comments</span>
 									  		</li>
 									  	@endforeach
 									</ul>

@@ -22,8 +22,8 @@ class ComposerServiceProvider extends ServiceProvider
                 'contact',
                 'videos',
                 'includes/header',
-                'documentation/students/alldocumentation',
-                'documentation/students/showdocumentation'
+                'documentation/alldocumentation',
+                'documentation/showdocumentation'
             
             ], 
             

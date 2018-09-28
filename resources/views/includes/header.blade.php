@@ -122,9 +122,9 @@
                                                     <li class="dropdown">
                                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation</a>
                                                         <ul class="dropdown-menu">
-                                                            <li><a href="{{url('documentation/students/alldocumentation')}}">For Students </a></li>
-                                                            <li><a href="{{url('teachers')}}">For Teachers</a></li>
-                                                            <li><a href="{{url('administrators')}}">For Administrators</a></li>
+                                                            @foreach($categories as $category)
+                                                                <li><a href="{{url('documentation/alldocumentation/'.$category->id)}}">For {{$category->category_name}} </a></li>
+                                                            @endforeach
                                                         </ul>
                                                     </li>
                                                     <li class="">
