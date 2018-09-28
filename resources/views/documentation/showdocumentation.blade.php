@@ -64,7 +64,7 @@
 
 							<!-- comments start -->
 							<div class="comments">
-								<h2 class="title">There are {{$post->post_comments}} comments</h2>
+								<h2 class="title">There are {{$post->comments->count()}} comments</h2>
 
 								<!-- comment start -->
 								@foreach($comments as $comment)
@@ -73,20 +73,19 @@
 
 										<div class="comment clearfix">
 											<div class="comment-content">
-												<!--<h3>{{$comment->name}}</h3>-->
 												<div class="comment-meta">By <a href="#">{{$comment->name}}</a> | {{$comment->created_at->diffForHumans()}}</div>
 												<div class="comment-body clearfix">
-													{{$comment->post_comment}}
+													<p>{{$comment->post_comment}}</p>
+													<a href="blog-post.html" class="btn btn-gray more pull-right"><i class="fa fa-reply"></i> Reply</a>
 												</div>
 											</div>
 											
 											<!-- comment start -->
 											<div class="comment clearfix">
 												<div class="comment-content clearfix">
-													<h3>Comment title</h3>
-													<div class="comment-meta">By <a href="#">admin</a> | Today, 12:31</div>
-													<div class="comment-body">
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
+													<div class="comment-meta">By <a href="#">{{$comment->name}}</a> | {{$comment->created_at->diffForHumans()}}</div>
+													<div class="comment-body clearfix">
+														<p>{{$comment->post_comment}}</p>
 														<a href="blog-post.html" class="btn btn-gray more pull-right"><i class="fa fa-reply"></i> Reply</a>
 													</div>
 												</div>
@@ -104,7 +103,11 @@
 							<!-- comments form start -->
 							<div class="comments-form">
 								<h2 class="title">Add your comment</h2>
-								<form >
+								<form enctype="multipart/form-data" method="post" action="{{ url('documentation/addcomment', [$post->id]) }}">
+									 {{ csrf_field() }}
+
+					              	<input type="hidden" name="post_id" value="{{ $post->id }}" >
+					              	
 									<div class="form-group has-feedback">
 										<label for="name4">Full Name<span class="text-danger small">*</span></label>
 										<input type="text" class="form-control" id="name" name="name" placeholder="" required>
