@@ -18,4 +18,9 @@ class DocumentationController extends Controller
 
     	return view('documentation.showdocumentation', compact('post'));
     }
+
+    public function addComment(Request $request, Post $post){
+
+    	return back();
+    }
 }

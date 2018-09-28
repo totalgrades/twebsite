@@ -54,6 +54,10 @@
 										<li><i class="fa fa-comment-o pr-5"></i> <a href="#">{{$post->post_comments}} comments</a></li> 
 										<!--<li><i class="fa fa-tags pr-5"></i> <a href="#">tag 1</a>, <a href="#">tag 2</a>, <a href="#">long tag 3</a> </li>-->
 									</ul>
+									<ul class="links pull-right">
+										<li><i class="fa fa-edit pr-5"></i> <a href="#">Leave a Comment</a></li> 
+									</ul>
+									
 								</footer>
 							</article>
 							<!-- blogpost end -->
@@ -63,53 +67,36 @@
 								<h2 class="title">There are {{$post->post_comments}} comments</h2>
 
 								<!-- comment start -->
-								<div class="comment clearfix">
-									<div class="comment-avatar">
-										<img src="images/avatar.jpg" alt="avatar">
-									</div>
-									<div class="comment-content">
-										<h3>Comment title</h3>
-										<div class="comment-meta">By <a href="#">admin</a> | Today, 12:31</div>
-										<div class="comment-body clearfix">
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
-											<a href="blog-post.html" class="btn btn-gray more pull-right"><i class="fa fa-reply"></i> Reply</a>
-										</div>
-									</div>
-									
-									<!-- comment start -->
-									<div class="comment clearfix">
-										<div class="comment-avatar">
-											<img src="images/avatar.jpg" alt="avatar">
-										</div>
-										<div class="comment-content clearfix">
-											<h3>Comment title</h3>
-											<div class="comment-meta">By <a href="#">admin</a> | Today, 12:31</div>
-											<div class="comment-body">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
-												<a href="blog-post.html" class="btn btn-gray more pull-right"><i class="fa fa-reply"></i> Reply</a>
+								@foreach($comments as $comment)
+
+									@if($comment->post_id == $post->id)
+
+										<div class="comment clearfix">
+											<div class="comment-content">
+												<!--<h3>{{$comment->name}}</h3>-->
+												<div class="comment-meta">By <a href="#">{{$comment->name}}</a> | {{$comment->created_at->diffForHumans()}}</div>
+												<div class="comment-body clearfix">
+													{{$comment->post_comment}}
+												</div>
 											</div>
-										</div>
-									</div>
-									<!-- comment end -->
+											
+											<!-- comment start -->
+											<div class="comment clearfix">
+												<div class="comment-content clearfix">
+													<h3>Comment title</h3>
+													<div class="comment-meta">By <a href="#">admin</a> | Today, 12:31</div>
+													<div class="comment-body">
+														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
+														<a href="blog-post.html" class="btn btn-gray more pull-right"><i class="fa fa-reply"></i> Reply</a>
+													</div>
+												</div>
+											</div>
+											<!-- comment end -->
 
-								</div>
-								<!-- comment end -->
-
-								<!-- comment start -->
-								<div class="comment clearfix">
-									<div class="comment-avatar">
-										<img src="images/avatar.jpg" alt="avatar">
-									</div>
-									<div class="comment-content clearfix">
-										<h3>Comment title</h3>
-										<div class="comment-meta">By <a href="#">admin</a> | Today, 12:31</div>
-										<div class="comment-body">
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
-											<a href="blog-post.html" class="btn btn-gray more pull-right"><i class="fa fa-reply"></i> Reply</a>
 										</div>
-									</div>
-								</div>
-								<!-- comment end -->
+										<!-- comment end -->
+									@endif
+								@endforeach
 
 							</div>
 							<!-- comments end -->
@@ -117,22 +104,29 @@
 							<!-- comments form start -->
 							<div class="comments-form">
 								<h2 class="title">Add your comment</h2>
-								<form>
+								<form >
 									<div class="form-group has-feedback">
-										<label for="name4">Name</label>
-										<input type="text" class="form-control" id="name4" placeholder="" required>
+										<label for="name4">Full Name<span class="text-danger small">*</span></label>
+										<input type="text" class="form-control" id="name" name="name" placeholder="" required>
 										<i class="fa fa-user form-control-feedback"></i>
 									</div>
+
 									<div class="form-group has-feedback">
-										<label for="subject4">Subject</label>
-										<input type="text" class="form-control" id="subject4" placeholder="" required>
-										<i class="fa fa-pencil form-control-feedback"></i>
-									</div>
-									<div class="form-group has-feedback">
-										<label for="message4">Message</label>
-										<textarea class="form-control" rows="8" id="message4" placeholder="" required></textarea>
+										<label for="name4">Email<span class="text-danger small">*</span></label>
+										<input type="email" class="form-control" id="email" name="email" placeholder="" required>
 										<i class="fa fa-envelope-o form-control-feedback"></i>
 									</div>
+									
+									<div class="form-group has-feedback">
+										<label for="message4">Your Comment<span class="text-danger small">*</span></label>
+										<textarea class="form-control" rows="8" id="post_comment" name="post_comment" placeholder="" required></textarea>
+										<i class="fa fa-comment-o form-control-feedback"></i>
+									</div>
+
+									<div class="form-group">
+										<div class="g-recaptcha" data-sitekey="{{env('RE_CAPTCHA_SITEKEY')}}" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+									</div>
+
 									<input type="submit" value="Submit" class="btn btn-default">
 								</form>
 							</div>

@@ -23,6 +23,8 @@ Route::post('postSchoolRegistrationForm', 'HomePublicController@postSchoolRegist
 //Documentation - Students - Teacher - Administrators
 Route::get('documentation/alldocumentation/{category}', 'Documentation\DocumentationController@allDocumentation');
 Route::get('documentation/showdocumentation/{post}', 'Documentation\DocumentationController@showDocumentation');
+Route::post('documentation/addcomment/{post}', 'Documentation\DocumentationController@addComment');
+
 
 Route::get('/careers', 'HomePublicController@careers');
 Route::get('/careers/jobdetails/{job}', 'HomePublicController@jobDetails');

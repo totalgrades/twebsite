@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use App\Job;
 use App\Category;
 use App\Post;
+use App\Comment;
 
 
 Class PublicViewComposer {
@@ -27,13 +28,16 @@ Class PublicViewComposer {
 
         $posts = Post::get();
 
+        $comments = Comment::get();
+
 
         //put variables in views
         $view
         ->with('today', $today)
         ->with('new_jobs', $new_jobs)
         ->with('categories', $categories)
-        ->with('posts', $posts);
+        ->with('posts', $posts)
+        ->with('comments', $comments);
         
     }
 }
