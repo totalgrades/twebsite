@@ -24,6 +24,7 @@ Route::post('postSchoolRegistrationForm', 'HomePublicController@postSchoolRegist
 Route::get('documentation/alldocumentation/{category}', 'Documentation\DocumentationController@allDocumentation');
 Route::get('documentation/showdocumentation/{post}', 'Documentation\DocumentationController@showDocumentation');
 Route::post('documentation/addcomment/{post}', 'Documentation\DocumentationController@addComment');
+Route::post('documentation/addreply/{comment}', 'Documentation\DocumentationController@addReply');
 
 
 Route::get('/careers', 'HomePublicController@careers');

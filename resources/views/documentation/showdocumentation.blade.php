@@ -51,11 +51,12 @@
 								</div>
 								<footer class="clearfix">
 									<ul class="links pull-left">
-										<li><i class="fa fa-comment-o pr-5"></i> <a href="#">{{$post->post_comments}} comments</a></li> 
+										<li><i class="fa fa-comment-o pr-5"></i> <a href="#">{{$post->comments->count()}} comments</a></li> 
 										<!--<li><i class="fa fa-tags pr-5"></i> <a href="#">tag 1</a>, <a href="#">tag 2</a>, <a href="#">long tag 3</a> </li>-->
 									</ul>
 									<ul class="links pull-right">
-										<li><i class="fa fa-edit pr-5"></i> <a href="#">Leave a Comment</a></li> 
+										<li><i class="fa fa-edit pr-5"></i> <a href="#leaveCommentForm">Leave a Comment</a></li>
+										
 									</ul>
 									
 								</footer>
@@ -76,21 +77,123 @@
 												<div class="comment-meta">By <a href="#">{{$comment->name}}</a> | {{$comment->created_at->diffForHumans()}}</div>
 												<div class="comment-body clearfix">
 													<p>{{$comment->post_comment}}</p>
-													<a href="blog-post.html" class="btn btn-gray more pull-right"><i class="fa fa-reply"></i> Reply</a>
+													<button type="button" class="btn btn-primary pull-right" id="commentReply-{{$comment->id}}"><i class="fa fa-reply"></i> Reply</button>
+
+													<!-- comments reply form start -->
+													<div class="comments-form col-md-10 pull-right" id="replyCommentFormDiv-{{$comment->id}}" style="display: none;">
+														<hr>
+														<form enctype="multipart/form-data" method="post" action="{{ url('documentation/addreply', [$comment->id]) }}">
+															 {{ csrf_field() }}
+
+											              	<input type="hidden" name="comment_id" value="{{ $comment->id }}" >
+											              	
+															<div class="form-group has-feedback">
+																<label for="name4">Full Name<span class="text-danger small">*</span></label>
+																<input type="text" class="form-control" id="name" name="name" placeholder="" required>
+																<i class="fa fa-user form-control-feedback"></i>
+															</div>
+
+															<div class="form-group has-feedback">
+																<label for="name4">Email<span class="text-danger small">*</span></label>
+																<input type="email" class="form-control" id="email" name="email" placeholder="" required>
+																<i class="fa fa-envelope-o form-control-feedback"></i>
+															</div>
+															
+															<div class="form-group has-feedback">
+																<label for="message4">Your reply to {{$comment->name}}'s Comment<span class="text-danger small">*</span></label>
+																<textarea class="form-control" rows="8" id="reply" name="reply" placeholder="" required></textarea>
+																<i class="fa fa-comment-o form-control-feedback"></i>
+															</div>
+
+															<div class="form-group">
+																<div class="g-recaptcha" data-sitekey="{{env('RE_CAPTCHA_SITEKEY')}}" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+															</div>
+
+															<input type="submit" value="Submit" class="btn btn-default" id="submitCommentReply-{{$comment->id}}">
+														</form>
+													</div>
+													<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+													<script type="text/javascript">
+													  jQuery(document).ready(function(){
+                      
+													      $("#commentReply-{{$comment->id}}").click(function(){
+													         $("#replyCommentFormDiv-{{$comment->id}}").show(1000);
+													      });
+
+													      $("#submitCommentReply-{{$comment->id}}").click(function(){
+													         $("#replyCommentFormDiv-{{$comment->id}}").hide(1000);
+													      });
+													   });
+													</script>
+													<!-- comments reply form end -->
 												</div>
 											</div>
-											
-											<!-- comment start -->
-											<div class="comment clearfix">
-												<div class="comment-content clearfix">
-													<div class="comment-meta">By <a href="#">{{$comment->name}}</a> | {{$comment->created_at->diffForHumans()}}</div>
-													<div class="comment-body clearfix">
-														<p>{{$comment->post_comment}}</p>
-														<a href="blog-post.html" class="btn btn-gray more pull-right"><i class="fa fa-reply"></i> Reply</a>
+
+										@foreach($replies as $reply)
+
+											@if($reply->comment_id == $comment->id)
+
+												<!-- reply reply start -->
+												<div class="comment clearfix">
+													<div class="comment-content clearfix">
+														<div class="comment-meta">By <a href="#">{{$reply->name}} <i class="fa fa-mail-forward"></i> {{$reply->comment->name}}</a> | {{$reply->created_at->diffForHumans()}}</div>
+														<div class="comment-body clearfix">
+															<p>{{$reply->reply}}</p>
+															
+															<!-- replies reply form start -->
+																<div class="comments-form col-md-10 pull-right" id="replyReplyFormDiv-{{$reply->id}}" style="display: none;">
+																	<hr>
+																	<form enctype="multipart/form-data" method="post" action="{{ url('documentation/addreplyreply', [$reply->id]) }}">
+																		 {{ csrf_field() }}
+
+														              	<input type="hidden" name="comment_id" value="{{ $reply->id }}" >
+														              	
+																		<div class="form-group has-feedback">
+																			<label for="name4">Full Name<span class="text-danger small">*</span></label>
+																			<input type="text" class="form-control" id="name" name="name" placeholder="" required>
+																			<i class="fa fa-user form-control-feedback"></i>
+																		</div>
+
+																		<div class="form-group has-feedback">
+																			<label for="name4">Email<span class="text-danger small">*</span></label>
+																			<input type="email" class="form-control" id="email" name="email" placeholder="" required>
+																			<i class="fa fa-envelope-o form-control-feedback"></i>
+																		</div>
+																		
+																		<div class="form-group has-feedback">
+																			<label for="message4">Your reply to {{$reply->name}}'s reply<span class="text-danger small">*</span></label>
+																			<textarea class="form-control" rows="8" id="replyreply" name="replyreply" placeholder="" required></textarea>
+																			<i class="fa fa-comment-o form-control-feedback"></i>
+																		</div>
+
+																		<div class="form-group">
+																			<div class="g-recaptcha" data-sitekey="{{env('RE_CAPTCHA_SITEKEY')}}" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+																		</div>
+
+																		<input type="submit" value="Submit" class="btn btn-default" id="submitreplyReply-{{$reply->id}}">
+																	</form>
+																</div>
+																<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+																<script type="text/javascript">
+																  jQuery(document).ready(function(){
+			                      
+																      $("#replyReply-{{$reply->id}}").click(function(){
+																         $("#replyReplyFormDiv-{{$reply->id}}").show(1000);
+																      });
+
+																      $("#submitReplyReply-{{$reply->id}}").click(function(){
+																         $("#replyReplyFormDiv-{{$reply->id}}").hide(1000);
+																      });
+																   });
+																</script>
+																<!-- replies reply form end -->
+														</div>
 													</div>
 												</div>
-											</div>
-											<!-- comment end -->
+												<!-- reply reply end -->
+
+											@endif
+										@endforeach
 
 										</div>
 										<!-- comment end -->
@@ -101,7 +204,7 @@
 							<!-- comments end -->
 
 							<!-- comments form start -->
-							<div class="comments-form">
+							<div class="comments-form" id="leaveCommentForm">
 								<h2 class="title">Add your comment</h2>
 								<form enctype="multipart/form-data" method="post" action="{{ url('documentation/addcomment', [$post->id]) }}">
 									 {{ csrf_field() }}

@@ -10,6 +10,7 @@ use App\Job;
 use App\Category;
 use App\Post;
 use App\Comment;
+use App\Reply;
 
 
 Class PublicViewComposer {
@@ -30,6 +31,8 @@ Class PublicViewComposer {
 
         $comments = Comment::get();
 
+        $replies = Reply::get();
+
 
         //put variables in views
         $view
@@ -37,7 +40,8 @@ Class PublicViewComposer {
         ->with('new_jobs', $new_jobs)
         ->with('categories', $categories)
         ->with('posts', $posts)
-        ->with('comments', $comments);
+        ->with('comments', $comments)
+        ->with('replies', $replies);
         
     }
 }

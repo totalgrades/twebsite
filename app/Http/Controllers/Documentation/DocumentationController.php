@@ -8,6 +8,7 @@ use App\Post;
 use App\Category;
 use App\Traits\CaptchaTrait;
 use App\Comment;
+use App\Reply;
 
 class DocumentationController extends Controller
 {
@@ -45,6 +46,35 @@ class DocumentationController extends Controller
                     'email'=>$request->email,
                     'post_id'=>$post->id,
                     'post_comment'=>$request->post_comment,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ]);
+               
+        return back();
+	}
+
+	public function addReply(Request $request, Comment $comment){
+
+    	$request['captcha'] = $this->captchaCheck();
+
+    	$this->validate($request, [
+    		'name' => 'required',
+    		'email' => 'required|email',
+    	    'reply' => 'required',
+    	    'g-recaptcha-response' => 'required',
+        	'captcha' => 'required|min:1',
+	    ],
+
+	    [
+	     'g-recaptcha-response.required' => 'Captcha is required',
+	     'captcha.min' => 'Wrong captcha, please try again.'
+	    ]);
+	        
+	    Reply::insert([
+                    'name'=>$request->name,
+                    'email'=>$request->email,
+                    'comment_id'=>$comment->id,
+                    'reply'=>$request->reply,
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
                 ]);
