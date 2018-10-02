@@ -123,7 +123,7 @@
                                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation</a>
                                                         <ul class="dropdown-menu">
                                                             @foreach($categories as $category)
-                                                                <li><a href="{{url('documentation/alldocumentation/'.$category->id)}}">For {{$category->category_name}} </a></li>
+                                                                <li><a href="{{url('documentation/alldocumentation/'.$category->id)}}">For {{$category->category_name}} ({{$posts->where('category_id', $category->id)->count()}})</a></li>
                                                             @endforeach
                                                         </ul>
                                                     </li>

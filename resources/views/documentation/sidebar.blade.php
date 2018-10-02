@@ -12,7 +12,7 @@
 											@foreach($categories as $category)
 
 												<li {{{ (Request::is('documentation/alldocumentation/'.$category->id) ? 'class=active' : '') }}}>
-													<a href="{{url('/documentation/alldocumentation/'.$category->id)}}">{{$category->category_name}}</a>
+													<a href="{{url('/documentation/alldocumentation/'.$category->id)}}">{{$category->category_name}} ({{$posts->where('category_id', $category->id)->count()}})</a>
 												</li>
 
 											@endforeach
