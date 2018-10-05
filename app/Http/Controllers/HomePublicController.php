@@ -218,7 +218,7 @@ class HomePublicController extends Controller
         'school_address' => 'required',
         'city' => 'required',
         'state' => 'required',
-        'about_school' => 'required',
+        //'about_school' => 'required',
         'must_agree' => 'required',
         'g-recaptcha-response' => 'required',
         'captcha' => 'required|min:1',

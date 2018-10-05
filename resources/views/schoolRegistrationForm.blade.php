@@ -64,10 +64,10 @@
 									                <div class="col-md-6">
 									                    <input type="text" class="form-control" id="preferedDomainName" name="preferedDomainName" placeholder="eg: portal">
 									                </div>
-									                <label for="inputValue" class="col-md-1 control-label" style="text-align: left;">.totalgrades.com</label>
+									                <label for="inputValue" class="col-md-1 control-label" style="text-align: left;">.totalgrades.org</label>
 									                
 									            </div>
-									            <p class="h6" id="portalDomainUrl">Your portal url will be <span class="text-info bg-secondary">https://www.<span class="text-info bg-link" id="spanText" style="font-size: 20px; color: darkred;">portal</span>.totalgrades.com</span></p>
+									            <p class="h6" id="portalDomainUrl">Your portal url will be <span class="text-info bg-secondary">https://www.<span class="text-info bg-link" id="spanText" style="font-size: 20px; color: darkred;">portal</span>.totalgrades.org</span></p>
 									            <p><span id="status" style="display: none"><img src="{{asset('idea/images/loader.gif')}}"> <span>Checking...</span></span></p>
 									            <p><span id="error_preferedDomainName"></span></p>
 									        </div>
@@ -116,9 +116,9 @@
 											</div>
 										</div>
 										<div class="form-group has-feedback">
-											<label class="col-sm-3 control-label" style="font-size: 12px;">Tell us a bit about your school<span class="text-danger small">*</span></label>
+											<label class="col-sm-3 control-label" style="font-size: 12px;">Tell us a bit about your school</label>
 											<div class="col-sm-8">
-												<textarea type="text" name="about_school" class="form-control" id="about_school" placeholder="Tell us a bit about your school"></textarea>
+												<textarea type="text" name="about_school" class="form-control" id="about_school" placeholder="This is not mandatory."></textarea>
 											</div>
 										</div>
 										
