@@ -11,6 +11,8 @@
         <meta name="description" content="Nahorr Analytics - a software and data analytics company">
         <meta name="author" content="nahorr.com">
 
+        @include('includes.google_analytics')
+
         <!-- Mobile Meta -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 

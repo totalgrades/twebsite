@@ -23,7 +23,7 @@ class CreateRegistrationSchoolsTable extends Migration
             $table->string('school_address');
             $table->string('city');
             $table->string('state');
-            $table->string('about_school');
+            $table->string('about_school')->nullable()->change();
             $table->boolean('must_agree')->defualt(0);
             $table->timestamps();
         });
