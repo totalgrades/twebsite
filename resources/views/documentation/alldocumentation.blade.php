@@ -50,8 +50,8 @@
 										@foreach($posts->where('category_id', $category->id) as $key=>$post)
 
 									  		<li class="list-group-item d-flex justify-content-between align-items-center">
-									  			<a href="{{ url('documentation/showdocumentation/'.$post->id) }}"> {{$post->post_title}}</a>
-									  			<span class="badge badge-primary badge-pill">{{$post->comments->count()}} comments</span>
+									  			<a href="{{ url('documentation/showdocumentation/'.$post->id) }}">{{$loop->index+1}}. {{$post->post_title}}</a>
+									  			{{$post->comments->count()}} <i class="fa fa-comments" aria-hidden="true"></i>
 									  		</li>
 									  	@endforeach
 									</ul>
