@@ -26,6 +26,7 @@
 
 				<div class="container">
 					<div class="row">
+						
 
 						<!-- main start -->
 						<!-- ================ -->
@@ -33,8 +34,75 @@
 
 							<!-- page-title start -->
 							<!-- ================ -->
-							<h1 class="page-title text-center">Documentation for {{ $category->category_name }}</h1>
-							<p class="text-center">Totalgrades is a free online gradebook by Nahorr Analytics.</p>
+							@if($category->category_name == 'Questions')
+							<div class="text-center">
+								<button type="button" class="btn btn-primary btn-lg btn-block" id="askQuestion">Ask Your Question</button>
+							</div>
+							@if (count($errors) > 0)
+	                              
+	                          <div class="alert alert-danger">
+	                            <ul>
+	                                @foreach ($errors->all() as $error)
+	                                    <li>{{ $error }}</li>
+	                                @endforeach
+	                            </ul>
+	                          </div>
+
+	            			@endif
+								<p class="text-center" style="margin-top: 10px;">{{ $category->category_description }}</p>
+								<!-- add a question form start -->
+								<div class="comments-form col-md-12" id="addQuestionFormDiv" style="display: none;">
+									<hr>
+									<form enctype="multipart/form-data" method="post" action="{{ url('/documentation/storenewquestion') }}">
+										 {{ csrf_field() }}
+
+										 <input type="hidden" name="user_id" value="1" >
+                          				 <input type="hidden" name="category_id" value="{{$category->id}}" >
+						              	 <input type="hidden" name="show_profile_picture" value="0">
+
+										<div class="form-group has-feedback">
+											<label for="name4">Title<span class="text-danger small">*</span></label>
+											<input type="text" class="form-control" id="post_title" name="post_title" placeholder="Enter a short title for your question" required>
+											<i class="fa fa-user form-control-feedback"></i>
+										</div>
+
+																				
+										<div class="form-group has-feedback">
+											<label for="message4">Your Question<span class="text-danger small">*</span></label>
+											<textarea class="summernote form-control" rows="8" id="post_body" name="post_body"></textarea>
+											<i class="fa fa-comment-o form-control-feedback"></i>
+										</div>
+
+										<div class="form-group">
+											<div class="g-recaptcha" data-sitekey="{{env('RE_CAPTCHA_SITEKEY')}}" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+										</div>
+										<button type="button" class="btn btn-danger" id="closeQuestionForm">Close</button>
+										<input type="submit" value="Submit" class="btn btn-default">
+									</form>
+
+									
+
+								</div>
+								<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+								<script type="text/javascript">
+								  jQuery(document).ready(function(){
+
+								      $("#askQuestion").click(function(){
+								         $("#addQuestionFormDiv").show(1000);
+								      });
+
+								      $("#closeQuestionForm").click(function(){
+								         $("#addQuestionFormDiv").hide(1000);
+								      });
+								   });
+								</script>
+								<!-- ask a quetion form end -->
+							@else
+								<h1 class="page-title text-center">Documentation for {{ $category->category_name }}</h1>
+								<p class="text-center">Totalgrades is a free online gradebook by Nahorr Analytics.</p>
+							@endif
+							
+							
 							<div class="separator"></div>
 							<!-- page-title end -->
 							

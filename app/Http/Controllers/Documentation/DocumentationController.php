@@ -12,36 +12,36 @@ use App\Reply;
 
 class DocumentationController extends Controller
 {
-	use CaptchaTrait;
+    use CaptchaTrait;
 
     public function allDocumentation(Category $category){
 
-    	return view('documentation.alldocumentation', compact('category'));
+        return view('documentation.alldocumentation', compact('category'));
     }
 
     public function showDocumentation(Post $post){
 
-    	return view('documentation.showdocumentation', compact('post'));
+        return view('documentation.showdocumentation', compact('post'));
     }
 
     public function addComment(Request $request, Post $post){
 
-    	$request['captcha'] = $this->captchaCheck();
+        $request['captcha'] = $this->captchaCheck();
 
-    	$this->validate($request, [
-    		'name' => 'required',
-    		'email' => 'required|email',
-    	    'post_comment' => 'required',
-    	    'g-recaptcha-response' => 'required',
-        	'captcha' => 'required|min:1',
-	    ],
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'post_comment' => 'required',
+            'g-recaptcha-response' => 'required',
+            'captcha' => 'required|min:1',
+        ],
 
-	    [
-	     'g-recaptcha-response.required' => 'Captcha is required',
-	     'captcha.min' => 'Wrong captcha, please try again.'
-	    ]);
-	        
-	    Comment::insert([
+        [
+         'g-recaptcha-response.required' => 'Captcha is required',
+         'captcha.min' => 'Wrong captcha, please try again.'
+        ]);
+            
+        Comment::insert([
                     'name'=>$request->name,
                     'email'=>$request->email,
                     'post_id'=>$post->id,
@@ -51,26 +51,26 @@ class DocumentationController extends Controller
                 ]);
                
         return back();
-	}
+    }
 
-	public function addReply(Request $request, Comment $comment){
+    public function addReply(Request $request, Comment $comment){
 
-    	$request['captcha'] = $this->captchaCheck();
+        $request['captcha'] = $this->captchaCheck();
 
-    	$this->validate($request, [
-    		'name' => 'required',
-    		'email' => 'required|email',
-    	    'reply' => 'required',
-    	    'g-recaptcha-response' => 'required',
-        	'captcha' => 'required|min:1',
-	    ],
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'reply' => 'required',
+            'g-recaptcha-response' => 'required',
+            'captcha' => 'required|min:1',
+        ],
 
-	    [
-	     'g-recaptcha-response.required' => 'Captcha is required',
-	     'captcha.min' => 'Wrong captcha, please try again.'
-	    ]);
-	        
-	    Reply::insert([
+        [
+         'g-recaptcha-response.required' => 'Captcha is required',
+         'captcha.min' => 'Wrong captcha, please try again.'
+        ]);
+            
+        Reply::insert([
                     'name'=>$request->name,
                     'email'=>$request->email,
                     'comment_id'=>$comment->id,
@@ -80,5 +80,35 @@ class DocumentationController extends Controller
                 ]);
                
         return back();
-	}
+    }
+
+    public function addNewQuestion(Request $request)
+    {
+
+        $request['captcha'] = $this->captchaCheck();
+
+        $this->validate(request(), [
+            'category_id' => 'required',
+            'post_title' => 'required',
+            'post_body' => 'required',
+            'g-recaptcha-response' => 'required',
+            'captcha' => 'required|min:1',
+        ], 
+        [
+         'g-recaptcha-response.required' => 'Captcha is required',
+         'captcha.min' => 'Wrong captcha, please try again.'
+        ]);
+
+        Post::insert([
+                    'user_id'=>$request->user_id,
+                    'category_id'=>$request->category_id,
+                    'post_title'=>$request->post_title,
+                    'post_body'=>$request->post_body,
+                    'show_profile_picture' => $request->show_profile_picture,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                ]);
+               
+        return back();
+    }
 }

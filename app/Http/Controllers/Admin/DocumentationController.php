@@ -6,21 +6,26 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
 use App\Post;
+use App\Traits\CaptchaTrait;
 
 class DocumentationController extends Controller
 {
+    use CaptchaTrait;
+
       public function documentation(Category $category)
     {
-    	return view('admin.documentation', compact('category'));
+        return view('admin.documentation', compact('category'));
     }
 
     public function storeNewDocPost(Request $request, Category $category) 
     {
+
         $this->validate(request(), [
             'category_id' => 'required',
             'post_title' => 'required',
             'post_body' => 'required',
         ]);
+
         Post::insert([
                     'user_id'=>$request->user_id,
                     'category_id'=>$request->category_id,
@@ -33,9 +38,9 @@ class DocumentationController extends Controller
        
         
         return redirect()->route('documentation', [$category->id]);
-	}
+    }
 
-	public function editDocPost(Post $post)
+    public function editDocPost(Post $post)
     {
         return view('admin.editdocumentation', compact('post'));
     }

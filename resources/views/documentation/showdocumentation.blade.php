@@ -10,6 +10,16 @@
 
 				<div class="container">
 					<div class="row">
+						@if (count($errors) > 0)
+							<div class="alert alert-danger">
+	                            <ul>
+	                                @foreach ($errors->all() as $error)
+	                                    <li>{{ $error }}</li>
+	                                @endforeach
+	                            </ul>
+	                          </div>
+
+            			@endif
 
 						<!-- main start -->
 						<!-- ================ -->
@@ -42,7 +52,14 @@
 									</div>
 									<div class="blogpost-content">
 										<header>
-											<div class="submitted"><i class="fa fa-user pr-5"></i> by <a href="#">{{$post->user->name}}</a></div>
+											<div class="submitted">
+												@if($post->category->category_name == "Questions")
+														<strong>Question submitted {{$post->created_at->diffForHumans()}}</strong>
+												@else
+													<i class="fa fa-user pr-5"></i> by <a href="#">{{$post->user->name}}</a>
+												@endif
+												
+											</div>
 										</header>
 
 										{!! $post->post_body !!}
@@ -58,6 +75,7 @@
 										<li><i class="fa fa-edit pr-5"></i> <a href="#leaveCommentForm">Leave a Comment</a></li>
 										
 									</ul>
+
 									
 								</footer>
 							</article>
@@ -77,6 +95,9 @@
 												<div class="comment-meta">By <a href="#">{{$comment->name}}</a> | {{$comment->created_at->diffForHumans()}}</div>
 												<div class="comment-body clearfix">
 													<p>{{$comment->post_comment}}</p>
+
+
+
 													<button type="button" class="btn btn-primary pull-right" id="commentReply-{{$comment->id}}"><i class="fa fa-reply"></i> Reply</button>
 
 													<!-- comments reply form start -->
@@ -109,8 +130,10 @@
 																<div class="g-recaptcha" data-sitekey="{{env('RE_CAPTCHA_SITEKEY')}}" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
 															</div>
 
-															<input type="submit" value="Submit" class="btn btn-default" id="submitCommentReply-{{$comment->id}}">
+															<button type="button" class="btn btn-danger" id="submitCommentReply-{{$comment->id}}">Close</button>
+															<input type="submit" value="Submit" class="btn btn-default">
 														</form>
+														
 													</div>
 													<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 													<script type="text/javascript">
@@ -172,6 +195,7 @@
 
 																		<input type="submit" value="Submit" class="btn btn-default" id="submitreplyReply-{{$reply->id}}">
 																	</form>
+																	
 																</div>
 																<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 																<script type="text/javascript">
@@ -235,6 +259,7 @@
 
 									<input type="submit" value="Submit" class="btn btn-default">
 								</form>
+								
 							</div>
 							<!-- comments form end -->
 
