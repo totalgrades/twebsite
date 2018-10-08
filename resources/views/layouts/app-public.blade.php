@@ -20,7 +20,7 @@
         <link rel="shortcut icon" href="{{asset('favicon.png')}}">
         
         <!-- include summernote css/js -->
-        <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
 
         <!-- Web Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -91,7 +91,7 @@
         <!-- Jquery and Bootstap core js files -->
         <script type="text/javascript" src="{{asset('idea/plugins/jquery.min.js')}}"></script>
         <script type="text/javascript" src="{{asset('idea/bootstrap/js/bootstrap.min.js')}}"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
 
         <!-- Modernizr javascript -->
         <script type="text/javascript" src="{{asset('idea/plugins/modernizr.js')}}"></script>
