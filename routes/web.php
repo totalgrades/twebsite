@@ -20,12 +20,12 @@ Route::get('schoolRegistrationForm', 'HomePublicController@schoolRegistrationFor
 Route::post('checkdomainavailability', 'HomePublicController@checkDomainAvailability')->name('check_domain_availability');
 Route::post('postSchoolRegistrationForm', 'HomePublicController@postSchoolRegistrationForm')->name('SchoolRegistrationForm');
 
-//Documentation - Students - Teacher - Administrators
+//Documentation - Students - Teacher - Administrators, AskQuestions
 Route::get('documentation/alldocumentation/{category}', 'Documentation\DocumentationController@allDocumentation');
 Route::get('documentation/showdocumentation/{post}', 'Documentation\DocumentationController@showDocumentation');
 Route::post('documentation/addcomment/{post}', 'Documentation\DocumentationController@addComment');
 Route::post('documentation/addreply/{comment}', 'Documentation\DocumentationController@addReply');
-
+Route::post('documentation/storenewquestion', 'Documentation\DocumentationController@addNewQuestion');
 
 Route::get('/careers', 'HomePublicController@careers');
 Route::get('/careers/jobdetails/{job}', 'HomePublicController@jobDetails');
