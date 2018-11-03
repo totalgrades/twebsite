@@ -20,7 +20,7 @@
 										</ul>
 									</nav>
 								</div>
-								<div class="block clearfix">
+								<!-- <div class="block clearfix">
 									<h3 class="title">Latest tweets</h3>
 									<div class="separator"></div>
 									<ul class="tweets">
@@ -33,7 +33,7 @@
 											<p><a href="#">@lorem</a> ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, aliquid, et molestias nesciunt <a href="#">http://t.fd/adfasdfasd</a>.</p><span>16 hours ago</span>
 										</li>
 									</ul>
-								</div>
+								</div> -->
 							
 							</div>
 						</aside>

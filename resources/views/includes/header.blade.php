@@ -31,9 +31,9 @@
                                             <a href="{{url('home')}}"><button type="button" class="btn-sm" > <i class="fa fa-user"></i>{{Auth::user()->name}}</button></a>
                                         </div>
                                     @else
-                                        <div class="btn-group dropdown">
-                                            <a href="{{route('login')}}"><button type="button" class="btn-sm" > <i class="fa fa-user"></i> Login</button></a>
-                                        </div>
+                                        
+                                            <a class="btn btn-secondary" href="{{route('login')}}"" role="button"><i class="fa fa-user"></i> <strong>Login</strong></a>
+                                        
                                     @endif
                                     <div class="btn-group dropdown">
                                         <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-phone"></i> <strong>08060776024</strong></button>
@@ -115,8 +115,13 @@
                                                     <li class="">
                                                         <a href="{{url('schoolRegistrationForm')}}">Register</a>
                                                     </li>
-                                                    <li class="">
-                                                        <a href="https://demo.totalgrades.com" target="_blank">Demo </a>
+                                                    
+                                                    <li class="dropdown">
+                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demo</a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="https://demo.totalgrades.com" target="_blank">Totalgrades 1.0 </a></li>
+                                                            <li><a href="https://demo20.totalgrades.com" target="_blank">Totalgrades 2.0-beta </a></li>
+                                                        </ul>
                                                     </li>
                                                 
                                                     <li class="dropdown">
