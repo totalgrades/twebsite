@@ -48,6 +48,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'admin'], function () {
     
     Route::get('/admin/home', 'Admin\HomeController@index');
+    Route::get('/admin/contactformsubmissions', 'Admin\HomeController@contactFormSubmissions');
 
     //Documentation
 	    //Categories

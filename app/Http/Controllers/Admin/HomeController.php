@@ -16,5 +16,11 @@ class HomeController extends Controller
     	
         return view('admin.home');
     }
+
+    public function contactFormSubmissions()
+    {
+    	
+        return view('admin.contactformsubmissions');
+    }
    
 }

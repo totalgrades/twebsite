@@ -51,20 +51,14 @@
                     </a>
                 </li>
 
-                <li {{{ (Request::is('private/contactformsubmissions') ? 'class=active' : '') }}}>
-                    <a href="{{ url('/private/contactformsubmissions') }}">
+                <li {{{ (Request::is('admin/contactformsubmissions') ? 'class=active' : '') }}}>
+                    <a href="{{ url('/admin/contactformsubmissions') }}">
                         <i class="fa fa-envelope"></i>
                         Contact Form
                     </a>
                 </li>
 
-                <li {{{ (Request::is('private/jobs') ? 'class=active' : '') }}}>
-                    <a href="{{ url('/private/jobs') }}">
-                        <i class="fa fa-suitcase"></i>
-                        Jobs
-                    </a>
-                </li>
-
+                
                 <li>
                     <a href="{{ route('logout') }}"
                       onclick="event.preventDefault();

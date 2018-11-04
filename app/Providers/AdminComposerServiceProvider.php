@@ -18,6 +18,7 @@ class AdminComposerServiceProvider extends ServiceProvider
             [
                 'admin/includes/top-info',
                 'admin/home',
+                'admin/contactformsubmissions',
                 'admin/documentation/categories',
                 'admin/documentation',
                 'admin/editdocumentation',
