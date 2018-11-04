@@ -120,7 +120,7 @@
                                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demo</a>
                                                         <ul class="dropdown-menu">
                                                             <li><a href="https://demo.totalgrades.com" target="_blank">Totalgrades 1.0 </a></li>
-                                                            <li><a href="https://demo20.totalgrades.com" target="_blank">Totalgrades 2.0-beta </a></li>
+                                                            <li><a href="https://demo20.totalgrades.org" target="_blank">Totalgrades 2.0-beta </a></li>
                                                         </ul>
                                                     </li>
                                                 
