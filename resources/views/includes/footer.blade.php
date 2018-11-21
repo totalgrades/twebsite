@@ -14,18 +14,19 @@
                                         <div class="col-sm-5">
                                             <p>TotalGrades is a free online gradebook for Primary and Secondary schools.</p>
                                             <ul class="social-links circle">
-                                                <li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
-                                                <li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+                                                <li class="facebook"><a target="_blank" href="https://www.facebook.com/totalgrades"><i class="fa fa-facebook"></i></a></li>
+                                                <li class="twitter"><a target="_blank" href="https://twitter.com/totalgrades"><i class="fa fa-twitter"></i></a></li>
                                                 <li class="youtube"><a target="_blank" href="https://www.youtube.com/channel/UCeIItDL2g7b-Q9Yx6_uOS1w"><i class="fa fa-youtube-play"></i></a></li>
                                                 
                                             </ul>
                                         </div>
                                         <div class="col-sm-7">
                                             <ul class="list-icons">
-                                                <li><i class="fa fa-map-marker pr-10"></i> 55 Westlynn Spur, Claresholm, Alberta</li>
+                                                <li><a href="https://totalgrades.com/"><i class="fa fa-globe pr-10"></i>wwww.totalgrades.com</a></li>
                                                 <li><i class="fa fa-phone pr-10"></i> +14034022387</li>
-                                                <li><i class="fa fa-fax pr-10"></i> 08060776024 </li>
+                                                <li><i class="fa fa-fax pr-10"></i> +447838859756 </li>
                                                 <li><i class="fa fa-envelope-o pr-10"></i> info@totalgrades.com</li>
+                                                <li><i class="fa fa-envelope-o pr-10"></i> totalgrades@gmail.com</li>
                                             </ul>
                                         </div>
                                     </div>

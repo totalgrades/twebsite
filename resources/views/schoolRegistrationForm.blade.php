@@ -25,7 +25,7 @@
 
 							<!-- name-and-slogan -->
 							<div class="site-slogan">
-								<span style="font-style: normal;">You are registering for your school to use Totalgrades!</span></span>
+								<span style="font-style: normal;">You are registering your school to use Totalgrades v2.0</span></span>
 							</div>
 
 							<div class="object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="300">

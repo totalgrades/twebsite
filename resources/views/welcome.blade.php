@@ -14,7 +14,7 @@
                         <div class="col-md-12">
                             <h1 class="text-center title">TotalGrades</h1>
                             <div class="separator"></div>
-                            <p class="text-center">Free, Simple, and Smart</p>
+                            <p class="text-center">Simple, and Smart, Free</p>
                             <div class="row grid-space-20">
                                 <div class="col-sm-12 col-md-4 col-md-push-4">
                                     <img src="{{asset('idea//images/report_card_totalgrades.png')}}" alt="" class="object-non-visible" data-animation-effect="fadeInUp" data-effect-delay="0">

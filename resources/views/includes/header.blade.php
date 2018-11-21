@@ -9,8 +9,8 @@
                             <!-- ================ -->
                             <div class="header-top-first clearfix">
                                 <ul class="social-links clearfix hidden-xs">
-                                    <li class="twitter"><a target="_blank" href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
-                                    <li class="facebook"><a target="_blank" href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+                                    <li class="twitter"><a target="_blank" href="https://twitter.com/totalgrades"><i class="fa fa-twitter"></i></a></li>
+                                    <li class="facebook"><a target="_blank" href="https://www.facebook.com/totalgrades"><i class="fa fa-facebook"></i></a></li>
                                     <li class="youtube"><a target="_blank" href="https://www.youtube.com/channel/UCeIItDL2g7b-Q9Yx6_uOS1w"><i class="fa fa-youtube-play"></i></a></li>
                                 </ul>
                             </div>
