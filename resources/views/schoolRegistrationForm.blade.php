@@ -125,13 +125,15 @@
 										<div class="form-group">
 											<div class="col-sm-offset-3 col-sm-8">
 												<div class="well" style="background-color: #b7c3d8;">
-													<button type="button" class="btn btn-primary" id="reviewPolicy" style="white-space: normal;">Please review our policy below. You must agree to continue.</button>
+													<button type="button" class="btn btn-primary" id="reviewPolicy" style="white-space: normal;">Please review our "TERMS AND CONDITIONS" below. You must agree to continue.</button>
 													<hr>
 
 													<div id="totalgradesPolicy" style="display: none;">
-															<p>Totalgrades is a free software developed by Nahorr Analytics. This software is distributed under the MIT lincence</p>
+															<p>TOTALGRADES IS A FREE ONLINE GRADES MANAGEMENT SOFTWARE.</p>
 
 								                            <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+								                            <p>THE COMPANY RESERVES THE RIGHT TO CHANGE THE ABOVE TERMS AND CONDITIONS AT ANY TIME.</p>
 															
 
 								                            

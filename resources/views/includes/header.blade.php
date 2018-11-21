@@ -36,11 +36,11 @@
                                         
                                     @endif
                                     <div class="btn-group dropdown">
-                                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-phone"></i> <strong>08060776024</strong></button>
+                                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-phone"></i> <span style="color: #3d78d8"><strong>+447838859756</strong></span></button>
                                     
                                     </div>
                                     <div class="btn-group dropdown">
-                                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-phone"></i><strong>+14034022387</strong></button>
+                                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"><i class="fa fa-phone"></i><span style="color: #3d78d8"><strong>+14034022387</strong></span></button>
                                     </div>
 
                                 </div>
@@ -119,8 +119,9 @@
                                                     <li class="dropdown">
                                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demo</a>
                                                         <ul class="dropdown-menu">
-                                                            <li><a href="https://demo.totalgrades.com" target="_blank">Totalgrades 1.0 </a></li>
-                                                            <li><a href="https://demo20.totalgrades.org" target="_blank">Totalgrades 2.0-beta </a></li>
+                                                            
+                                                            <li><a href="https://demo20.totalgrades.org" target="_blank">Totalgrades v2.0 <span style="color: #3498DB"><strong>(latest version)</strong></span> </a></li>
+                                                            <li><a href="https://demo.totalgrades.com" target="_blank">Totalgrades v1.0</a></li>
                                                         </ul>
                                                     </li>
                                                 
