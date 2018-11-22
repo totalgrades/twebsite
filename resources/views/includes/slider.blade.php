@@ -97,7 +97,7 @@
                                 <!-- LAYER NR. 3 -->
                                 <div class="tp-caption sfl tp-resizeme"
                                     data-x="center"
-                                    data-y="300" 
+                                    data-y="250" 
                                     data-speed="600"
                                     data-start="0"
                                     data-end="10000"
