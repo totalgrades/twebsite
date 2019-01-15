@@ -12,7 +12,7 @@
                                     <div class="logo-footer"><img id="logo-footer" src="{{asset('idea/images/logo_footer_totalgrades.png') }}" alt=""></div>
                                     <div class="row">
                                         <div class="col-sm-5">
-                                            <p>TotalGrades is a free online gradebook for Primary and Secondary schools.</p>
+                                            <p>TotalGrades is an online gradebook for primary and secondary schools.</p>
                                             <ul class="social-links circle">
                                                 <li class="facebook"><a target="_blank" href="https://www.facebook.com/totalgrades"><i class="fa fa-facebook"></i></a></li>
                                                 <li class="twitter"><a target="_blank" href="https://twitter.com/totalgrades"><i class="fa fa-twitter"></i></a></li>
@@ -43,7 +43,6 @@
                                             <li class="active"><a href="{{url('features')}}">Features</a></li>
                                             <li><a href="{{url('contact')}}">Contact</a></li>
                                             <li><a href="{{url('schoolRegistrationForm')}}">Register</a></li>
-                                            <li><a href="{{url('/contact')}}">Tutorials</a></li>
                                         </ul>
                                     </nav>
                                 </div>

@@ -33,7 +33,7 @@
                                     data-speed="600"
                                     data-start="0"
                                     data-end="10000"
-                                    data-endspeed="600">TotalGrades is a Free Online Gradebook. 
+                                    data-endspeed="600">Online gradebook that works. 
                                 </div>
 
                                 <!-- LAYER NR. 2 -->
@@ -43,7 +43,7 @@
                                     data-speed="600"
                                     data-start="0"
                                     data-end="10000"
-                                    data-endspeed="600">Totalgrades is a free online gradebook for primary and secondary schools. <br>To start using totalgrades, all you need to to is click on "Register Now" below and your school portal will be set up.
+                                    data-endspeed="600">Totalgrades is an online gradebook for primary and secondary schools. <br>To start using totalgrades, all you need to is click on "Register Now" below and your school portal will be set up.
                                 </div>
 
                                 <!-- LAYER NR. 3 -->
@@ -81,7 +81,7 @@
                                     data-speed="600"
                                     data-start="0"
                                     data-end="10000"
-                                    data-endspeed="600">TotalGrades is For Primary and Secondary Schools.
+                                    data-endspeed="600">For primary and secondary schools.
                                 </div>
 
                                 <!-- LAYER NR. 2 -->
@@ -91,7 +91,7 @@
                                     data-speed="600"
                                     data-start="0"
                                     data-end="10000"
-                                    data-endspeed="600">An easy to use yet very powerful online platform for managing and presenting students’ grades and attendance records elegantly. <br>It is designed with students and their parents in mind.
+                                    data-endspeed="600">Totalgrades is an easy to use, yet very powerful online platform for managing and presenting students’ grades and attendance records elegantly. <br>It is designed with students and their parents in mind.
                                 </div>
 
                                 <!-- LAYER NR. 3 -->
@@ -101,7 +101,7 @@
                                     data-speed="600"
                                     data-start="0"
                                     data-end="10000"
-                                    data-endspeed="600"><a href="https://demo.totalgrades.com/home" class="btn btn-primary btn-lg" target="_blank"> <i class="fa fa-users pl-10"></i> Students - Login </a> <a href="https://demo.totalgrades.com/admin_home" class="btn btn-danger btn-lg" target="_blank"><i class="fa fa-user-plus pl-10"></i> Teachers - Login </a>
+                                    data-endspeed="600"><a href="https://demo20.totalgrades.org/login" class="btn btn-primary btn-lg" target="_blank"> <i class="fa fa-users pl-10"></i> Students - Login </a> <a href="https://demo20.totalgrades.org/admin_login" class="btn btn-danger btn-lg" target="_blank"><i class="fa fa-user-plus pl-10"></i> Teachers - Login </a>
                                 </div>
 
                                 </li>

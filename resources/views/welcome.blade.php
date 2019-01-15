@@ -12,9 +12,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="text-center title">TotalGrades</h1>
+                            <h1 class="text-center title">Totalgrades</h1>
                             <div class="separator"></div>
-                            <p class="text-center">Simple, and Smart, Free</p>
+                            <p class="text-center">Simple, Smart, Beautiful</p>
                             <div class="row grid-space-20">
                                 <div class="col-sm-12 col-md-4 col-md-push-4">
                                     <img src="{{asset('idea//images/report_card_totalgrades.png')}}" alt="" class="object-non-visible" data-animation-effect="fadeInUp" data-effect-delay="0">
@@ -26,7 +26,7 @@
                                         </div>
                                         <div class="body">
                                             <h2>Easy to Use on Any Device</h2>
-                                            <p>Use Total Grades Anywhere, Anytime-on your desktop, laptop, ipad, or phone...It is designed with students and their parents in mind.</p>
+                                            <p>Use Totalgrades Anywhere, Anytime-on your desktop, laptop, ipad, or phone...It is designed with students and their parents in mind.</p>
                                             
                                         </div>
                                     </div>
@@ -46,8 +46,8 @@
                                             <i class="fa fa-money"></i>
                                         </div>
                                         <div class="body">
-                                            <h2>Free</h2>
-                                            <p>Total Grades is free no matter how many students you have. </p>
+                                            <h2>Free for one year</h2>
+                                            <p>Use Totalgrades for a whole year for free no matter how many students you have - No commitment, No Contracts.</p>
                                             
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@
                         <div class="call-to-action">
                             <div class="row">
                                 
-                                    <h1 class="title text-center bg-info">Total Grades is free no matter how many students or schools you have.</h1>
+                                    <h1 class="title text-center bg-info">Totalgrades is free for one year no matter how many students or schools you have. No commitment or contract necessary.</h1>
                                     <a href="{{url('schoolRegistrationForm')}}" class="btn btn-default btn-lg" class="text-center">Register Now</a>
                                 
                             </div>
@@ -144,7 +144,7 @@
                 <div class="container text-center">
                     <h1 class="text-center">Why Choose Totalgrades</h1>
                     <div class="separator"></div>
-                    <p class="lead text-center">Because Totalgrades is an innovative free grades reporting solution developed by people with passion for improving the quality of primary and secondary eduction around the world. Totalgrades is an easy to use online platform for managing and presenting students’ grades and attendance records elegantly. Total Grades was designed with students and their parents in mind to provide a platform that encourages and empowers students to improve their grades while allowing parents to be actively enganged in helping shape their performances based on realtime statistics and feedback from teachers.</p>
+                    <p class="lead text-center">Because Totalgrades is an innovative free grades reporting solution developed by people with passion for improving the quality of primary and secondary eduction around the world. Totalgrades is an easy to use online platform for managing and presenting students’ grades and attendance records elegantly. Totalgrades was designed with students and their parents in mind to provide a platform that encourages and empowers students to improve their grades while allowing parents to be actively enganged in helping shape their performances based on realtime statistics and feedback from teachers.</p>
                    
                     
                     <br>
@@ -154,7 +154,7 @@
                             <div class="space hidden-md hidden-lg"></div>
                         </div>
                         <div class="col-md-12">
-                           <a href="{{url('/contact')}}" class="btn btn-lg btn-default">Register Now</a> 
+                           <a href="{{url('/schoolRegistrationForm')}}" class="btn btn-lg btn-default">Register Now</a> 
                         </div>
                     </div>
                 </div>

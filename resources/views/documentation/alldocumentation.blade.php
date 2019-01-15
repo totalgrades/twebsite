@@ -99,7 +99,7 @@
 								<!-- ask a quetion form end -->
 							@else
 								<h1 class="page-title text-center">Documentation for {{ $category->category_name }}</h1>
-								<p class="text-center">Totalgrades is a free online gradebook by Nahorr Analytics.</p>
+								<p class="text-center">Totalgrades is an online and offline grades  management solution by Nahorr Analytics.</p>
 							@endif
 							
 							
@@ -173,7 +173,7 @@
 						<div class="col-md-8 col-md-offset-2">
 							<div class="call-to-action">
 								<h1 class="title">Need a live demonstration?</h1>
-								<p>We are always happy to show you how TotalGrades could help your school stand out. Plase call us or send us a messages. </p>
+								<p>We are always happy to show you how Totalgrades could help your school stand out. Plase call us or send us a messages. </p>
 								<a class="btn btn-white more" data-toggle="modal" data-target="#myModal">
 								Call Us <i class="pl-10 fa fa-phone"></i>
 								</a>

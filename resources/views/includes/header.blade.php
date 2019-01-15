@@ -70,7 +70,7 @@
 
                                 <!-- logo -->
                                 <div class="logo">
-                                    <a href="{{url('/')}}"><img id="logo" src="{{asset('idea/images/logo_totalgrades.png')}}" alt="TotalGrades"></a>
+                                    <a href="{{url('/')}}"><img id="logo" src="{{asset('idea/images/logo_totalgrades.png')}}" alt="Totalgrades"></a>
                                 </div>
 
                             </div>

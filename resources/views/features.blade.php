@@ -34,7 +34,7 @@
 							<!-- page-title start -->
 							<!-- ================ -->
 							<h1 class="page-title text-center">Core Features</h1>
-							<p class="text-center">Totalgrades - free online gradebook.</p>
+							<p class="text-center">Totalgrades - Online gradebook.</p>
 							<div class="separator"></div>
 							<!-- page-title end -->
 							
@@ -84,7 +84,7 @@
 								</div>
 								<div class="col-md-6">
 									<div class="space hidden-lg hidden-md"></div>
-									<iframe class="animated fadeInUpSmall" width="100%" height="400" src="https://www.youtube.com/embed/Bzn9dMX7ISs" frameborder="100" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+									<iframe class="animated fadeInUpSmall" width="100%" height="400" src="https://www.youtube.com/embed/RBnC5o-gfYM" frameborder="100" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 								</div>
 							</div>
 							<div class="space"></div>
@@ -106,7 +106,7 @@
 						<div class="col-md-8 col-md-offset-2">
 							<div class="call-to-action">
 								<h1 class="title">Need a live demonstration?</h1>
-								<p>We are always happy to show you how TotalGrades could help your school stand out. Plase call us or send us a messages. </p>
+								<p>We are always happy to show you how Totalgrades could help your school stand out. Plase call us or send us a messages. </p>
 								<a class="btn btn-white more" data-toggle="modal" data-target="#myModal">
 								Call Us <i class="pl-10 fa fa-phone"></i>
 								</a>
